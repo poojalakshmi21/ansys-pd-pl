@@ -43,6 +43,10 @@ The clock period in config.tcl was 5ns and was overriden by sky130A_sky130_fd_sc
 
 Design preparation is completed.
 
+![image](https://github.com/user-attachments/assets/6a137249-30fa-4486-aaab-55ec415d94d7)
+
+
+
 
 
 
