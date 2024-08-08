@@ -45,6 +45,12 @@ Design preparation is completed.
 
 ![image](https://github.com/user-attachments/assets/6a137249-30fa-4486-aaab-55ec415d94d7)
 
+And the run folder is created under design folder. 
+
+# SKY_L3 - Review files after design prep and run synthesis
+**Notes**
+
+
 
 
 
