@@ -22,6 +22,7 @@ Directory used to invoke the tool
 
 # SKY_L2 - Design Preparation Step
 **Notes**
+
 ![image](https://github.com/user-attachments/assets/bfb277ff-e167-496b-93a9-20e27a434e1e)
 
 ![image](https://github.com/user-attachments/assets/d4709367-92fb-439f-80f2-59f49afdea3c)
