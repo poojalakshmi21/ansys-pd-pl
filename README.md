@@ -37,7 +37,7 @@ config.tcl: bypasses any configuration that is already done into a plane. Many o
 ![image](https://github.com/user-attachments/assets/b3f6025e-d0a2-473b-ab32-2e087af8664a)
 
 sky130A_sky130_fd_sc_hd_config.tcl overrides the default value in config.tcl
-The clock period in config.tcl was 20ns and was overriden by sky130A_sky130_fd_sc_hd_config.tcl to 23.6ns
+The clock period in config.tcl was 5ns and was overriden by sky130A_sky130_fd_sc_hd_config.tcl to 24.73ns
 
 
 
