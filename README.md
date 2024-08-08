@@ -50,6 +50,24 @@ And the run folder is created under design folder.
 # SKY_L3 - Review files after design prep and run synthesis
 **Notes**
 
+![image](https://github.com/user-attachments/assets/e45675be-97da-4e37-812f-a8ddfd9d9484)
+
+![image](https://github.com/user-attachments/assets/74cbbb2f-20cd-4b63-af00-562f888480f6)
+
+![image](https://github.com/user-attachments/assets/9d40afa0-a6f6-4534-b8aa-f8f218a3c2e2)
+
+Tech Lef information is available. Metal layer related, that is wire information and cell level related information is available. 
+
+![image](https://github.com/user-attachments/assets/d9041b49-f66e-4ea0-8037-b07678fa6a12)
+
+Various files under Results, Reports, Logs..
+
+Apart from config.tcl which is avaialbale under Designs folder and Runs folder, the config.tcl available under 08-08_09-20 basically shows which all default parameters are being taken by the run.
+
+![image](https://github.com/user-attachments/assets/6396da72-8b85-481c-ae86-5f0e027962f0)
+
+
+
 
 
 
