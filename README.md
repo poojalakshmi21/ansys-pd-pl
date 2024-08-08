@@ -1,6 +1,6 @@
 # Sky130 Day 1 - Inception of open-sorce EDA, OpenLANE and Sky130 PDK
 # Sky130_D1_SK3  - Get familiar to open-sorce EDA tools
-# SKY_L3 - OpenLANE Directory Structure in detail
+# SKY_L1 - OpenLANE Directory Structure in detail
 **Notes**
 
 pdks:  contains all pdk information. pdk used for this workshop is skywater-130nm. OpenLANE is built around this pdk. 
@@ -15,6 +15,15 @@ libs.ref contains the timing related files, lef files, tech lef, cell lef and so
 libs.tech are those files specific to the tool
 
 ![image](https://github.com/user-attachments/assets/50f9e3c2-24de-449f-a727-ddc8200797f2)
+
+![image](https://github.com/user-attachments/assets/2b9fad37-68cd-4404-8d60-c6c47184274f)
+
+Directory used to invoke the tool
+
+# SKY_L2 - Design Preparation Step
+**Notes**
+
+
 
 
 
