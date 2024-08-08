@@ -22,6 +22,18 @@ Directory used to invoke the tool
 
 # SKY_L2 - Design Preparation Step
 **Notes**
+![image](https://github.com/user-attachments/assets/bfb277ff-e167-496b-93a9-20e27a434e1e)
+
+![image](https://github.com/user-attachments/assets/d4709367-92fb-439f-80f2-59f49afdea3c)
+
+src: souce, where verilog file for RTL is present 
+config.tcl: bypasses any configuration that is already done into a plane. Many of the switches uses the deafault value. For example, clock period is set, verilog files are picked from a specific path and so on.
+
+![image](https://github.com/user-attachments/assets/4eca0e18-e141-4c78-95a5-de6d297bfc7f)
+
+
+
+
 
 
 
