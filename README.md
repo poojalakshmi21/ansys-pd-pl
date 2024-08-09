@@ -105,6 +105,24 @@ Clock count = No. of D-FFs/No. of cells = 1613/14876 = 0.1084
 
 Percentage = 10.84%
 
+After the syntehsis is complete:
+1. Results folder:![image](https://github.com/user-attachments/assets/d3904ce9-ac66-4798-9c5e-804d4e7090a9)
+
+Opened the following:
+
+a. picorv32a.synthesis.v (contains synthesised netlist and the abc has completed all the mappings)
+
+3. Report folder: ![image](https://github.com/user-attachments/assets/469fe773-0b83-46b8-aab6-02c6eb07ed11)
+
+Opened the following: 
+
+a. less 1-yosys_2.stat.rpt:
+![image](https://github.com/user-attachments/assets/a891457a-72ad-405a-a04f-75408d5c0ccb)
+
+b. less opensta.rpt
+
+c. less opensta_main.timing.rpt
+
 
 
 
