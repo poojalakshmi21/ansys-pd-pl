@@ -66,6 +66,15 @@ Apart from config.tcl which is avaialbale under Designs folder and Runs folder, 
 
 ![image](https://github.com/user-attachments/assets/6396da72-8b85-481c-ae86-5f0e027962f0)
 
+![image](https://github.com/user-attachments/assets/252dca00-e378-4c70-b5b8-6e2cd1371f83)
+
+Use the run_synthesis command to run the Synthesis flow 
+
+# SKY_L4 - OpenLANE Project Git Link Description
+**Notes**
+
+
+
 
 
 
