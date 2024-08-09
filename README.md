@@ -85,8 +85,26 @@ https://openlane.readthedocs.io/en/latest/reference/interactive_mode.html
 ![image](https://github.com/user-attachments/assets/bc0b943e-86e7-4cdf-916b-a9f1b9c62def)
 
 Links for Fossi Dial Up:
+
 https://www.youtube.com/live/9Lw83kFtnc4?si=w8iuuy94h0yD7bzc
+
 https://www.youtube.com/live/EczW2IWdnOM?si=o09PSbgX_HbZi59s
+
+# SKY_L5 - Steps to characterize synthesis results
+**Notes**
+
+Task 1: To find flop ratio, that is number of D-FlipFlops or total no. of cells
+
+![image](https://github.com/user-attachments/assets/6aa7420e-fd9a-4348-b2cb-be7f1cbb1e83)
+
+No. of cells = 14876
+
+No. of D-FFs = 1613
+
+Clock count = No. of D-FFs/No. of cells = 1613/14876 = 0.1084
+
+Percentage = 10.84%
+
 
 
 
