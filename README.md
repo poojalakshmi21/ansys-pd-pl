@@ -112,16 +112,19 @@ Opened the following:
 
 a. picorv32a.synthesis.v (contains synthesised netlist and the abc has completed all the mappings)
 
-3. Report folder: ![image](https://github.com/user-attachments/assets/469fe773-0b83-46b8-aab6-02c6eb07ed11)
+![image](https://github.com/user-attachments/assets/76098864-122a-4f2d-ad8b-7e7e091db9a4)
+
+2. Report folder: ![image](https://github.com/user-attachments/assets/469fe773-0b83-46b8-aab6-02c6eb07ed11)
 
 Opened the following: 
 
 a. less 1-yosys_2.stat.rpt:
 ![image](https://github.com/user-attachments/assets/a891457a-72ad-405a-a04f-75408d5c0ccb)
 
-b. less opensta.rpt
+b. less opensta_main.timing.rpt:
+![image](https://github.com/user-attachments/assets/7fe9c7a9-fb0a-4782-903b-9792eeeff9d1)
 
-c. less opensta_main.timing.rpt
+
 
 
 
