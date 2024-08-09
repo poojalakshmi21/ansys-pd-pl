@@ -73,6 +73,25 @@ Use the run_synthesis command to run the Synthesis flow
 # SKY_L4 - OpenLANE Project Git Link Description
 **Notes**
 
+https://github.com/efabless/openlane
+
+The OpenLane Flow 
+![image](https://github.com/user-attachments/assets/b2f278bc-e560-4f98-9290-25f56680219f)
+
+Going through OpenLane Documentation
+
+https://openlane.readthedocs.io/en/latest/reference/interactive_mode.html
+
+![image](https://github.com/user-attachments/assets/bc0b943e-86e7-4cdf-916b-a9f1b9c62def)
+
+Links for Fossi Dial Up:
+https://www.youtube.com/live/9Lw83kFtnc4?si=w8iuuy94h0yD7bzc
+https://www.youtube.com/live/EczW2IWdnOM?si=o09PSbgX_HbZi59s
+
+
+
+
+
 
 
 
