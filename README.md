@@ -131,15 +131,27 @@ b. less opensta_main.timing.rpt:
 
 1. Define width and height of Core and Die:
 
-a. Take a netlist and convert the gates and flip-flops into physical dimensions (square/rectangular box).
+a. Consider   a netlist and convert the gates and flip-flops into physical dimensions (square/rectangular box).
 
-b. Remove all the wires and place all the gates and flipflops in a single plate (combining all of them into one physical dimension) to calculate the area occupied by the netlist on a Silicon Wafer.
+![image](https://github.com/user-attachments/assets/ef921f9f-21e1-4b5e-b8b0-f4b8ab806e99)
+
+b. Ignore all the wires for now and assume the following dimensions for a standard cell and flip flops: 
+
+![image](https://github.com/user-attachments/assets/e79cf04e-c59a-4bde-9c96-df8ec8e0a57f)
+
+Place all the gates and flipflops in a single plate by combining all of them into one physical dimension and calculate the area occupied by the netlist on a Silicon Wafer.
+
+Minimum area occupied by the netlist is as shown below:
+
+![image](https://github.com/user-attachments/assets/8a477cc8-5cc3-405f-840d-baafc666ca2d)
 
 c. Silicon Wafer contains a lot of Dies inside it and inside each Die there is a Core region.
 
 d. A Core is the section of the chip where the fundamental logic of the design is placed.
 
-e. A Die, which consists of core, is a small semiconductor material specimen on which the fundamental circuit is fabricated.
+e. A Die, encapsulates the core. These dies are imprinted multiple times in the silicon wafer to increase its throughput.
+
+![image](https://github.com/user-attachments/assets/cbfa757f-3bca-4073-ba1e-c099510bc8a2)
 
 f. Place all the logical cells (from b) inside the core and calculate the utilization factor. If logical cells occupy the complete area of the core, the utilization factor would be 1 which is not the practical scenario.
 
@@ -148,6 +160,19 @@ Utilization factor = (Area occupied by Netlist/ Total area of the Core)
 Aspect ratio = (Height of Core)/(Width of Core)
 
 If the aspect ratio is 1, it signifies that the chip is square-shaped else rectangle.
+
+For the following example the Utilization factor and Aspect ratio are both 1: 
+
+![image](https://github.com/user-attachments/assets/f3a4e65e-1562-4394-87b0-0db1ae9f5390)
+
+Some more examples:
+
+![image](https://github.com/user-attachments/assets/ae046f7d-14f7-44c9-993a-31f74a6dc664)
+
+![image](https://github.com/user-attachments/assets/85132317-efe0-488c-a157-3ca81fbe8e4e)
+
+# SKY_L2 - Concept of pre-placed cells
+**Notes**
 
 2. Define locations of Preplaced cells:
 
