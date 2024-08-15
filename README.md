@@ -131,7 +131,7 @@ b. less opensta_main.timing.rpt:
 
 1. Define width and height of Core and Die:
 
-a. Consider   a netlist and convert the gates and flip-flops into physical dimensions (square/rectangular box).
+a. Consider a netlist and convert the gates and flip-flops into physical dimensions (square/rectangular box).
 
 ![image](https://github.com/user-attachments/assets/ef921f9f-21e1-4b5e-b8b0-f4b8ab806e99)
 
@@ -139,17 +139,11 @@ b. Ignore all the wires for now and assume the following dimensions for a standa
 
 ![image](https://github.com/user-attachments/assets/e79cf04e-c59a-4bde-9c96-df8ec8e0a57f)
 
-Place all the gates and flipflops in a single plate by combining all of them into one physical dimension and calculate the area occupied by the netlist on a Silicon Wafer.
-
-Minimum area occupied by the netlist is as shown below:
+Place all the gates and flipflops in a single plate by combining all of them into one physical dimension and calculate the area occupied by the netlist on a Silicon Wafer. Minimum area occupied by the netlist is as shown below:
 
 ![image](https://github.com/user-attachments/assets/8a477cc8-5cc3-405f-840d-baafc666ca2d)
 
-c. Silicon Wafer contains a lot of Dies inside it and inside each Die there is a Core region.
-
-d. A Core is the section of the chip where the fundamental logic of the design is placed.
-
-e. A Die, encapsulates the core. These dies are imprinted multiple times in the silicon wafer to increase its throughput.
+c. Silicon Wafer contains a lot of Dies inside it and inside each Die there is a Core region. A Core is the section of the chip where the fundamental logic of the design is placed. A Die, encapsulates the core. These dies are imprinted multiple times in the silicon wafer to increase its throughput.
 
 ![image](https://github.com/user-attachments/assets/cbfa757f-3bca-4073-ba1e-c099510bc8a2)
 
@@ -159,9 +153,7 @@ Utilization factor = (Area occupied by Netlist/ Total area of the Core)
 
 Aspect ratio = (Height of Core)/(Width of Core)
 
-If the aspect ratio is 1, it signifies that the chip is square-shaped else rectangle.
-
-For the following example the Utilization factor and Aspect ratio are both 1: 
+If the aspect ratio is 1, it signifies that the chip is square-shaped else rectangle. For the following example the Utilization factor and Aspect ratio are both 1: 
 
 ![image](https://github.com/user-attachments/assets/f3a4e65e-1562-4394-87b0-0db1ae9f5390)
 
@@ -178,40 +170,62 @@ Some more examples:
 
 a. Preplaced cells are the black boxes having some specific functionality that is implemented once separately and then can be instantiated multiple times.
 
+![image](https://github.com/user-attachments/assets/b4c34c06-0c1c-484a-a4a2-52878a2d3e24)
+
 b. Preplaced cells are macros or IPs like memory, clock-gating cell, comparator, mux.
 
-c. The arrangement of these IPs in a chip is referred as floorplanning.
+![image](https://github.com/user-attachments/assets/3f38493d-cdb0-4fbc-a465-a45f8165150e)
 
-d. These IPs/blocks have user-defined locations, and hence are placed in the chip before automated placement-and-routing, and are called as preplaced cells.
+c. The arrangement of these IPs in a chip is referred as floorplanning. These IPs/blocks have user-defined locations, and hence are placed in the chip before automated placement-and-routing, and are called as preplaced cells. Automated placement and routing tools place the remaining logical cells in the design onto the chip. Place the preplaced cells on the basis of design scenario or design background.
 
-e. Automated placement and routing tools place the remaining logical cells in the design onto the chip.
+# SKY_L3 - De-coupling capacitors
+**Notes**
 
-f. Place the preplaced cells on the basis of design scenario or design background.
+3. Place the pre-placed cells closer to the input area and surround the preplaced cells with decoupling capacitors.
 
-3. Surround preplaced cells with decoupling capacitors.
+a. Decoupling capacitors are the huge capacitors that are completely filled with charge. Voltage across the decoupling capacitor is equivalent to the supply voltage. If power supply is 1V, decap will be charged till 1V. Decoupling capacitor is placed very near and parallel to the circuit. Everytime the circuit switches, it draws current from decap, whereas the RL network is used to replenish the charge into decap. As the name suggests, decoupling capacitor decouples the circuit from the main supply. With the help of decap local communication is taken care.
 
-a. Decoupling capacitors are the huge capacitors that are completely filled with charge. Voltage across the decoupling capacitor is equivalent to the supply voltage. If power supply is 1V, decap will be charged till 1V.
+![image](https://github.com/user-attachments/assets/aa3209ca-8313-4674-9042-2604e5ebe5f6)
 
-b. Decoupling capacitor is placed very near and parallel to the circuit.
-
-c. Everytime the circuit switches, it draws current from decap, whereas the RL network is used to replenish the charge into decap.
-
-d. As the name suggests, decoupling capacitor decouples the circuit from the main supply.
-
-e. So, with the help of decap, we have taken care of the local communication.
+# SKY_L4 - Powerplanning
+**Notes**
 
 4. Powerplanning
 
-a. Issue: Ground bounce and voltage droop issue because of one power supply.
+Possibilities of ground bounce and voltage droop issues due to usage of a single power supply is solved by powerplanning. 
 
-b. Solution: power planning --> multiple power supply through mesh kind of structure for VDD and VSS.
+![image](https://github.com/user-attachments/assets/ec7ce61c-a748-4a66-a85e-01c409e071d3)
+
+![image](https://github.com/user-attachments/assets/fab8c983-d395-4ec2-8485-0f5933bd25d7)
+
+![image](https://github.com/user-attachments/assets/32e0aa7a-b643-4da5-9851-37af465d58b5)
+
+![image](https://github.com/user-attachments/assets/4937e2f5-904c-46f9-9b73-4a0521c26ab8)
+
+Mltiple power supply through mesh structure for VDD and VSS.
+
+![image](https://github.com/user-attachments/assets/b36d615d-88f5-4663-9ebf-5ca0986eb9cb) 
+
+# SKY_L5 - Pin Placement and logical cell placement blockage.
+**Notes**
 
 5. Pin Placement and logical cell placement blockage.
 
-a. Clock ports are bigger than the data ports because clock drives all seq cells continuosly, basically they drives all the flops in the full chip. So, we need the least resistance path for the clocks.
+Pin Placement
 
-b. Logical cell placement blockage: we block the area between core and die to avoid placement of any logical cells in those areas by automated placement and routing tools because that area is reserve for the pin locations.
+   ![image](https://github.com/user-attachments/assets/9601af54-467f-4b2f-8648-74cb34438fe7)
 
+   ![image](https://github.com/user-attachments/assets/3eccb2e6-4849-4765-b612-f11411ef080f)
+
+Clock ports are bigger than the data ports because clock drives all seq cells continuosly, basically they drives all the flops in the full chip. So, we need the least resistance path for the clocks. 
+
+Logical cell placement blockage
+
+![image](https://github.com/user-attachments/assets/72424990-49c7-4642-be51-aebd47c9463a)
+
+We block the area between core and die to avoid placement of any logical cells in those areas by automated placement and routing tools because that area is reserve for the pin locations.
+
+# SKY_L5 - Steps to run floorplan using OpenLANE
 
 
 
