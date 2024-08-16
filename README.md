@@ -1,6 +1,6 @@
 # Sky130 Day 1 - Inception of open-sorce EDA, OpenLANE and Sky130 PDK
-# Sky130_D1_SK3  - Get familiar to open-sorce EDA tools
-# SKY_L1 - OpenLANE Directory Structure in detail
+## Sky130_D1_SK3  - Get familiar to open-sorce EDA tools
+### SKY_L1 - OpenLANE Directory Structure in detail
 **Notes**
 
 pdks:  contains all pdk information. pdk used for this workshop is skywater-130nm. OpenLANE is built around this pdk. 
@@ -20,7 +20,7 @@ libs.tech are those files specific to the tool
 
 Directory used to invoke the tool
 
-# SKY_L2 - Design Preparation Step
+### SKY_L2 - Design Preparation Step
 **Notes**
 
 ![image](https://github.com/user-attachments/assets/bfb277ff-e167-496b-93a9-20e27a434e1e)
@@ -47,7 +47,7 @@ Design preparation is completed.
 
 And the run folder is created under design folder. 
 
-# SKY_L3 - Review files after design prep and run synthesis
+### SKY_L3 - Review files after design prep and run synthesis
 **Notes**
 
 ![image](https://github.com/user-attachments/assets/e45675be-97da-4e37-812f-a8ddfd9d9484)
@@ -70,7 +70,7 @@ Apart from config.tcl which is avaialbale under Designs folder and Runs folder, 
 
 Use the run_synthesis command to run the Synthesis flow 
 
-# SKY_L4 - OpenLANE Project Git Link Description
+### SKY_L4 - OpenLANE Project Git Link Description
 **Notes**
 
 https://github.com/efabless/openlane
@@ -90,7 +90,7 @@ https://www.youtube.com/live/9Lw83kFtnc4?si=w8iuuy94h0yD7bzc
 
 https://www.youtube.com/live/EczW2IWdnOM?si=o09PSbgX_HbZi59s
 
-# SKY_L5 - Steps to characterize synthesis results
+### SKY_L5 - Steps to characterize synthesis results
 **Notes**
 
 Task 1: To find flop ratio, that is number of D-FlipFlops or total no. of cells
@@ -125,8 +125,8 @@ b. less opensta_main.timing.rpt:
 ![image](https://github.com/user-attachments/assets/7fe9c7a9-fb0a-4782-903b-9792eeeff9d1)
 
 # Sky130 Day 2 - Good Floorplan vs Bad Floorplan and Introduction to library cells
-# Sky130_D2_SK1 - Chip Floor planning considerations
-# SKY_L1 - Utilization factor and aspect ratio
+## Sky130_D2_SK1 - Chip Floor planning considerations
+### SKY_L1 - Utilization factor and aspect ratio
 **Notes**
 
 1. Define width and height of Core and Die:
@@ -163,7 +163,7 @@ Some more examples:
 
 ![image](https://github.com/user-attachments/assets/85132317-efe0-488c-a157-3ca81fbe8e4e)
 
-# SKY_L2 - Concept of pre-placed cells
+### SKY_L2 - Concept of pre-placed cells
 **Notes**
 
 2. Define locations of Preplaced cells:
@@ -178,7 +178,7 @@ b. Preplaced cells are macros or IPs like memory, clock-gating cell, comparator,
 
 c. The arrangement of these IPs in a chip is referred as floorplanning. These IPs/blocks have user-defined locations, and hence are placed in the chip before automated placement-and-routing, and are called as preplaced cells. Automated placement and routing tools place the remaining logical cells in the design onto the chip. Place the preplaced cells on the basis of design scenario or design background.
 
-# SKY_L3 - De-coupling capacitors
+### SKY_L3 - De-coupling capacitors
 **Notes**
 
 3. Place the pre-placed cells closer to the input area and surround the preplaced cells with decoupling capacitors.
@@ -187,7 +187,7 @@ a. Decoupling capacitors are the huge capacitors that are completely filled with
 
 ![image](https://github.com/user-attachments/assets/aa3209ca-8313-4674-9042-2604e5ebe5f6)
 
-# SKY_L4 - Powerplanning
+### SKY_L4 - Powerplanning
 **Notes**
 
 4. Powerplanning
@@ -206,7 +206,7 @@ Mltiple power supply through mesh structure for VDD and VSS.
 
 ![image](https://github.com/user-attachments/assets/b36d615d-88f5-4663-9ebf-5ca0986eb9cb) 
 
-# SKY_L5 - Pin Placement and logical cell placement blockage.
+### SKY_L5 - Pin Placement and logical cell placement blockage.
 **Notes**
 
 5. Pin Placement and logical cell placement blockage.
@@ -225,7 +225,155 @@ Logical cell placement blockage
 
 We block the area between core and die to avoid placement of any logical cells in those areas by automated placement and routing tools because that area is reserve for the pin locations.
 
-# SKY_L5 - Steps to run floorplan using OpenLANE
+### SKY_L6 - Steps to run floorplan using OpenLANE
+
+Standard cell placement takes place during Placement stage and not during Floorplanning. 
+
+By executing `less README.md`, here we can see global variable, syntesis, floorplanning, placement, CTS, Routing and so on.
+
+![image](https://github.com/user-attachments/assets/01e7b31e-b527-4bff-8385-38b004888735)
+
+![image](https://github.com/user-attachments/assets/291cdf5a-1bb4-44fd-a994-6fba47fd87f3)
+
+The variables like FP_CORE_UTIL and so on are called the switches. These switches are set under the .tcl files present under confirguration folders, that is, default value.
+
+![image](https://github.com/user-attachments/assets/e4ba39ba-c276-4217-9937-7d1941365da2)
+
+Precendence for the .tcl files containing the default values are:
+
+1. ![image](https://github.com/user-attachments/assets/ad0b68cd-1d9b-4f74-ac34-e110cb03adad)
+
+2. ![image](https://github.com/user-attachments/assets/90dc5110-9677-457b-bfde-f771c780e9cd)
+
+   `FP_CORE_UTIL = 65`, `FP_IO_VMETAL = 4`, `FP_IO_HMETAL = 3`
+
+4. ![image](https://github.com/user-attachments/assets/ed0d5bb3-ea49-4a3a-b141-74a50c9217e1)
+
+    `FP_CORE_UTIL = 50`, `FP_IO_VMETAL = 2`, `FP_IO_HMETAL = 3`
+
+   Using `run_floorplan`
+
+   ![image](https://github.com/user-attachments/assets/b83f88de-2542-40fa-bb92-6d33731cc10a)
+
+### SKY_L7 - Review floorplan files and steps to view floorplan
+
+![image](https://github.com/user-attachments/assets/c4e3b3cf-b271-4ac8-8716-c88c93f5d3a1)
+
+Opening def file: 
+
+![image](https://github.com/user-attachments/assets/2e2638cc-e5b7-491e-aaa4-90a84f93dd04)
+
+Viewing the floorplan in magic:
+
+![image](https://github.com/user-attachments/assets/4037ffe9-c81b-4ef0-b693-1fbc9459f63d)
+
+![image](https://github.com/user-attachments/assets/e1575759-f690-4709-bbac-8eff7d17a305)
+
+### SKY_L8 - Review floorplan layout in Magic 
+
+
+
+
+## SKY130_D2_SK3 - Cell design and characterization flows  
+### SKY_L1 - Inputs for cell design flow 
+### SKY_L2 - Circuit design step 
+### SKY_L3 - Layout design step 
+### SKY_L4 - Typical characterization flow
+ 
+## SKY130_D2_SK4 - General timing characterization parameters  
+### SKY_L1 - Timing threshold definitions
+### SKY_L1 - Propagation delay and transition time
+
+# SKY130 Day3 - Design library cell using Magic Layout and ngspice characterization
+## SKY130_D3_SKY1 - Labs for CMOS inverter ngspice simulations
+### SKY_L0 - IO placer revision
+### SKY_L1 - SPICE deck creation for CMOS inverter
+### SKY_L2 - SPICE simulation lab for CMOS inverter
+### SKY_L3 - Switching Thershold Vm
+### SKY_L4 - Static and dynamic simulation of CMOS inverter
+### SKY_L5 - Lab steps to git clone vsdstdcelldesign
+
+## SKY130_D3_SKY2 - Inceptions of  Layout AA CMOS fabrication process
+### SKY_L1 - 
+### SKY_L2 - 
+### SKY_L3 - S
+### SKY_L4 - S
+### SKY_L5 - L
+
+## SKY130_D3_SKY3 - Sky130 Tech File Labs
+### SKY_L1 - Sr
+### SKY_L2 - SP
+### SKY_L3 - S
+### SKY_L4 - Sta
+### SKY_L5 - L
+
+# SKY130 Day4 - 
+## SKY130_D4_SKY1 - 
+### SKY_L1 - 
+
+# SKY130 Day 5 - 
+## SKY130_D5_SKY1 - 
+### SKY_L1 -
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. Library Binding & Placement
+
+a. Netlist binding & initial place design
+
+i. Library contains the information on the size & timing of the standard cells & IPs/macros
+
+ii. Same standard cells can have multiple sizes based on the drive strength of the cells
+
+iii. If we place the cells very close to the others (abutment), the cell delay is minimal, otherwise, we may have to use buffers if the distance between the two cells is big.
+
+b. Optimize placement using estimated wire length & capacitance
+
+i. So, if two cells are far away from each other, the wire resistance & capacitance is very high causing very high RC delay
+
+ii. Slew depends upon the capacitance value & high capacitance values will produce bad slew
+
+c. Final Optimization
+
+i. Abutment is preferred for critical paths since the delay between the cells is negligible and the circuit can work extremely fast.
+
+d. Need for libraries & characterization
+
+i. Library characterization & modeling: Logic synthesis -> Floorplanning -> Placement -> CTS -> Routing -> STA
+
+ii. One thing is common in all these stages – gates/cells
+
+iii. In each of the ASIC design flow needs to have the library information on the cells
+
+e. Congestion Aware placement using RePIAce
+
+i. After floorplan, next stage is placement stage
+
+ii. Two sub-stages for placement: 1. Global placement (coarse & no legalization) 2. Detailed placement (legalization happens in detailed placement)
+
+iii. Legalization: Cells should be exactly inside the rows, no overlap on other cells, should be abutted, important from timing point of view
+
+iv. The command run_placement is performed. Wire length reduction is the focus here.
+
+
+
+
 
 
 
