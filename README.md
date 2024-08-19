@@ -313,20 +313,74 @@ continuing placement of cells
 
 ![image](https://github.com/user-attachments/assets/53cf4cc9-740a-4e28-b6f0-3013d47187d6)
 
+3. Optimize Placement:
+
 Optimised placement: This is the stage where wire length and capacitance are estimated. And based on that insert repeaters (To maintain signal intergrity, we would need something in the intermediate steps to reproduce what the input ports are saying. And hence we require repeaster. Repeaters are buffers that re-conditions your original signal, make a new signal which replicates the original signal and sends them forward). 
 
 More the repeaters, more the loss of areas. 
 
 ![image](https://github.com/user-attachments/assets/152e1778-31a3-4c1c-aba8-4fe8c7e33633)
 
+Slew is dependend on the value of the capacitor, the higher the value of the capacitor: the amount of charge required to charge the capacitor will be high and the slew will be even bad.
 
+![image](https://github.com/user-attachments/assets/8656cfc6-5459-486b-a5ee-e51de727513b)
 
+Repeaters are added for the belwo instance:
+
+![image](https://github.com/user-attachments/assets/7566682c-8134-40cd-82de-07d60ea1d054)
+
+![image](https://github.com/user-attachments/assets/942091ca-edcb-4dfc-a9b8-a66f06e7c2da)
 
 ### SKY_L3 - Final placement optimization
 
+![image](https://github.com/user-attachments/assets/06d7a0be-3694-4b57-8ae3-7e0fc4c1cba5)
+
+The elements FF1, 1 ,2 and FF2 logics are abutted, that is, there is no time delay between signal passed from FF1 to FF2. There are multiple reasons to do abutment, let's say this particular section of the circuit works at a very high speed and zero time delay is required, and don't want to waste delays on wires, and therefore, the abutment is done for those logics. This is a classic example of high frequency ckt usages.
+
+![image](https://github.com/user-attachments/assets/1c97a956-7490-4507-a2eb-1127e191b80a)
+
+![image](https://github.com/user-attachments/assets/3aceb05d-286e-4676-ac5f-45e3760d421e)
+
 ### SKY_L4 - Need for libraries and characterization
 
+SetUp Timing Analysis
+
+Since the clocks have not built, we need to check the data path considering there are no clocks or the clocks are ideal. Ideal clock means that the time required for a clock to reach any of the flip flops is zero.
+
+**Need for characterisation**
+
+**Part 1 - Concepts and theory - NLDM, CCS timing, power and noise chcarcterization**
+
+**Step 1: Logic Synthesis:** Typical IC design flow that every design needs to go through if it wants to be implemented onto a chip. So, the first step to do that is logic synthesis. If we have a functionality that is coded in the form of RTL, the first step is to convert the functionality into legal hardware is referred to as logic synthesis. So, the output of logic synthesis is an arrangement of gates that will represent your original functionality that you have described using an RTL. This is the first step of an IC design flow.
+
+![image](https://github.com/user-attachments/assets/aff81504-6d1c-4901-99ba-1aa76d85289e)
+
+**Step 2: Floorplanning:** In this step, we import the output of logic synthesis or the netlist that we get out of the logic synthesis and decide the size of the core and die. So the size of the core and die is completely dependent on the amount of gates and the shapes and sizes of the gates present in the output of the logic synthesis step.
+
+![image](https://github.com/user-attachments/assets/e605fa0b-31b7-4f71-a152-78f6dae44e7b)
+
+**Step 3: Placement:** After floorplanning, the placement stage is there, and then CTS (Clock Tree Synthesis). And then finally we have the routing stage.
+
+![image](https://github.com/user-attachments/assets/2125c691-a4b1-459d-9e0a-b4bc906efb83)
+
+**Step 4: CTS:** CTS is nothing but to have zero skew or clock being spread across logic cells at an equal time.   
+
+![image](https://github.com/user-attachments/assets/419bc88d-3262-42da-a0fe-9a3ddb1334ef)
+
+**Step 5: Routing:** 
+
+Below is an example of maze routing: 
+
+![image](https://github.com/user-attachments/assets/e0167b41-0a50-4005-89d5-aaf3fe2d0a31)
+
+![image](https://github.com/user-attachments/assets/2eaaa05f-fc1f-4385-bc72-a1a4b41afe3f)
+
+Library characterization is very important and this collection of gates if you place it in some area, that area is referred to as Library.
+
 ### SKY_L5 - Congestion aware and placement and RePlAce 
+
+
+
 
 ## SKY130_D2_SK3 - Cell design and characterization flows  
 ### SKY_L1 - Inputs for cell design flow 
@@ -336,7 +390,7 @@ More the repeaters, more the loss of areas.
  
 ## SKY130_D2_SK4 - General timing characterization parameters  
 ### SKY_L1 - Timing threshold definitions
-### SKY_L1 - Propagation delay and transition time
+### SKY_L2 - Propagation delay and transition time
 
 # SKY130 Day3 - Design library cell using Magic Layout and ngspice characterization
 ## SKY130_D3_SKY1 - Labs for CMOS inverter ngspice simulations
