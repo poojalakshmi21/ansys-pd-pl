@@ -271,8 +271,62 @@ Viewing the floorplan in magic:
 
 ### SKY_L8 - Review floorplan layout in Magic 
 
+Viewing layout after the floorplan using magic tool:
+
+To open the layout:
+
+![image](https://github.com/user-attachments/assets/e5d5a059-1b34-4439-b041-fb9dc9e1c010)
+
+![image](https://github.com/user-attachments/assets/d268292e-0c96-4208-9b64-e9404c8f2afa)
+
+![image](https://github.com/user-attachments/assets/8ff5e68a-bda2-45cc-bd3a-6d05894c2499)
+
+![image](https://github.com/user-attachments/assets/25d392ec-d2ef-4ef3-9a2a-836446cbbb6b)
+
+Floorplan does place the standard cells. They are present in the lower left corner of the layout:
+
+![image](https://github.com/user-attachments/assets/504478bd-c95c-4d7a-98d9-cf7e0ba52a1b)
+
+## SKY130_D2_SK2 - Library Binding and Placement  
+### SKY_L1 - Netlist binding and initial place design 
+
+1. Bind netlist with physical cells:
+
+The netlist contains different gates and the shape of each gate defines its functionality. Example: By the shape of OR gate we understand that it will perform OR operation. But in reality, we don't have such shapes for different gates, we just have a box structure for each gate that has some width and height (physical dimension).
+
+![image](https://github.com/user-attachments/assets/396f129f-e41f-4d17-a86f-64c02c17249d)
+
+![image](https://github.com/user-attachments/assets/e43fe760-c054-48b8-bc8e-3fad243b94f6)
+
+![image](https://github.com/user-attachments/assets/5379a1ee-a77a-4b95-8a32-0c81cddad7a5)
 
 
+2. Placement:
+
+After having proper shapes and sizes to each gate, these shapes and sizes are placed onto the floorplan. Now we have the floorplan, netlist, and physical view of the logic gates.
+
+![image](https://github.com/user-attachments/assets/b52f4d9b-2ae9-4149-8585-6713df6a1606)
+
+### SKY_L2 - Optimize placement using estimated wire-length and capacitance
+
+continuing placement of cells
+
+![image](https://github.com/user-attachments/assets/53cf4cc9-740a-4e28-b6f0-3013d47187d6)
+
+Optimised placement: This is the stage where wire length and capacitance are estimated. And based on that insert repeaters (To maintain signal intergrity, we would need something in the intermediate steps to reproduce what the input ports are saying. And hence we require repeaster. Repeaters are buffers that re-conditions your original signal, make a new signal which replicates the original signal and sends them forward). 
+
+More the repeaters, more the loss of areas. 
+
+![image](https://github.com/user-attachments/assets/152e1778-31a3-4c1c-aba8-4fe8c7e33633)
+
+
+
+
+### SKY_L3 - Final placement optimization
+
+### SKY_L4 - Need for libraries and characterization
+
+### SKY_L5 - Congestion aware and placement and RePlAce 
 
 ## SKY130_D2_SK3 - Cell design and characterization flows  
 ### SKY_L1 - Inputs for cell design flow 
