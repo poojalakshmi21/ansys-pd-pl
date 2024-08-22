@@ -379,11 +379,56 @@ Library characterization is very important and this collection of gates if you p
 
 ### SKY_L5 - Congestion aware and placement and RePlAce 
 
+After routing, it is placement stage.
 
+Placement in Openlane occurs in 2 stages: 
 
+a. Global placement 
+b. Detail placement.
+
+There are different tools to do both of these functionality.
+
+**Global placement**: coarse placement, no legalization happening
+
+What is legalization? --> The standard cells are placed in standard cell rows, they should be exactly inside the row abutted with each other. And there should be no overlaps. Legalization is more required from a timing point of view.
+
+**Detail placement**: legalization happens here
+
+When we do run_placement, first global placement happens. Global placement, the main objective is **reducing the wire length**. In Openlane, we use the concept of HPWL means **half-perimeter wire length**. Reduction of HPWL is the main focus and converging the overflow (OVFL) means a decrease in the OVFL value means the placement is going right.
+
+So, previously I had done till floorplan, for running the placement from the previous day's floorplan in Openlane, no need to run synthesis and floorplan again.
+
+Just do the following steps:
+
+a. package require openlane 0.9
+
+b. prep - design picorv32A 
+
+c. run_synthesis
+
+d. run_floorplan
+
+e. run_placement
+
+![image](https://github.com/user-attachments/assets/5ac30851-b8a5-40e5-b8d9-4797936cab53)
+
+In placement stage, the standard cells are fixed.
+
+![image](https://github.com/user-attachments/assets/d3c5eb3e-c77e-4df1-8dcb-a78542dc2614)
+
+![image](https://github.com/user-attachments/assets/9601543f-849d-44a3-bbba-b12570394b0d)
+
+Note: Power Distribution Network gets created during floorplan but in Openlane flow right now, the order is different. The floorplan does not create the Power Distribution Network. Here, in Openlane flow, PDN is done post floorplan, placement, and CTS.
 
 ## SKY130_D2_SK3 - Cell design and characterization flows  
 ### SKY_L1 - Inputs for cell design flow 
+
+
+
+
+
+
+
 ### SKY_L2 - Circuit design step 
 ### SKY_L3 - Layout design step 
 ### SKY_L4 - Typical characterization flow
