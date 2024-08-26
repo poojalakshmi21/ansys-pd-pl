@@ -559,14 +559,57 @@ g. **Output current waveform and Output voltage waveform:**
 ## SKY130_D3_SKY1 - Labs for CMOS inverter ngspice simulations
 ### SKY_L0 - IO placer revision
 
+In Openlane, we can do the changes on the fly. If suppose, we have already done the floorplan and observed a lot of congestion, we can change utilization factor even now. In our case, we have placed the IO pins equidistant, now we will be changing it to some other input output pin strategy.
 
+![image](https://github.com/user-attachments/assets/c6ae9fda-4555-44e7-bf01-9e85d29d0dca)
 
+IO placers are open source EDA tool used to place the IO's around the core. 
 
+setting the following variable to 2:
 
+![image](https://github.com/user-attachments/assets/8103d9d7-7b5f-4308-a533-39b700cf930e)
 
+and running floorplan again:
 
+![image](https://github.com/user-attachments/assets/eab28b70-25ed-40ed-bd3f-e7960566fc60)
+
+![image](https://github.com/user-attachments/assets/27dc3909-4d9c-41e1-ac85-ef5f912c95f3)
+
+Again opened the layout in Magic and the def is updated (in the same folder only where previous def was there) and the IO pin placement is changed.
+
+![image](https://github.com/user-attachments/assets/81abcbbb-bc9c-448d-8057-0c0804fd6065)
 
 ### SKY_L1 - SPICE deck creation for CMOS inverter
+
+SPICE simulations: 350nm, 250nm mos are available.
+
+1. Create a SPICE deck for VTC CMOS characteristics: netlist
+
+a. When we say W/L of mos it means it is the W/L of the channel of mos.
+
+b. In cmos, generally pmos should be wider than the nmos. Ideally, pmos should be twice or thrice of the nmos. But the spice deck we are creating is having nmos and pmos of the same W/L.
+
+![image](https://github.com/user-attachments/assets/76c3cea5-6c21-40e7-a2ec-0dd3725110f0)
+
+M1 --> pmos, M2 --> nmos
+
+Syntax of Mosfet in the SPICE: M1 Drain Gate Source Substrate type W L
+
+
+
+2. SPICE simulation in ngspice:
+
+Wn, Wp --> nomos and pmos channel width
+
+Ln, Lp --> nmos and pmos channel length
+
+Wn/Ln = Wp/Lp = 1.5
+
+
+
+
+
+
 ### SKY_L2 - SPICE simulation lab for CMOS inverter
 ### SKY_L3 - Switching Thershold Vm
 ### SKY_L4 - Static and dynamic simulation of CMOS inverter
