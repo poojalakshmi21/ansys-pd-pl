@@ -1,4 +1,4 @@
-# Sky130 Day 1 - Inception of open-sorce EDA, OpenLANE and Sky130 PDK
+![image](https://github.com/user-attachments/assets/7c9d51b2-9a71-42e4-89a1-20e0228a680a)# Sky130 Day 1 - Inception of open-sorce EDA, OpenLANE and Sky130 PDK
 ## Sky130_D1_SK3  - Get familiar to open-sorce EDA tools
 ### SKY_L1 - OpenLANE Directory Structure in detail
 **Notes**
@@ -423,23 +423,149 @@ Note: Power Distribution Network gets created during floorplan but in Openlane f
 ## SKY130_D2_SK3 - Cell design and characterization flows  
 ### SKY_L1 - Inputs for cell design flow 
 
+We have a placed and routed design here. Standard cells are placed in a section called Library. Library is a place where you keep all your standard cells, macros, IPs, decaps, etc.
+
+![image](https://github.com/user-attachments/assets/c340f1db-f6c3-4b22-9322-896182c2b871)
+
+Library has got cells with different functionalities, different sizes, and different threshold voltages (Vt).
+
+![image](https://github.com/user-attachments/assets/3696bd0e-4e61-45b4-ab16-f21d79318dfb)
+
+The next step is to take one of the inverters and understand its cell design flow. This inverter has to be represented in the form of its shape, in the form of its timing behavior, in the form of its drive strength, and in the form of its power characteristics, and so on. A small inverter has to go through a typical cell design flow.
+
+Cell design flow is divided into 3 parts:
 
 
+![image](https://github.com/user-attachments/assets/23bd2e3b-e5e6-41b4-a983-1cdfafe2c9ec)
 
+1. **Inputs**: inputs to design your inverter, Process design kits (pdks) provided by the foundry.
 
+a. **DRC & LVS rules**: tech file --> has 5he rules like poly width, extension over active, etc.
 
+![image](https://github.com/user-attachments/assets/50d23017-d71f-4367-a2c3-83d720624ef4)
+
+![image](https://github.com/user-attachments/assets/566582a9-c73d-4648-841d-39442554940d)
+
+b. **SPICE models**
+
+![image](https://github.com/user-attachments/assets/8d83b632-b9ee-4914-a2ad-3f8fef2e30d7)
 
 ### SKY_L2 - Circuit design step 
+
+c. **Library & user-defined specs**: Cell-height, supply voltage, metal layers, pin location, drawn gate length, etc
+
+![image](https://github.com/user-attachments/assets/0581ea5a-3d0f-4e79-9bac-bff786b8379a)
+
+![image](https://github.com/user-attachments/assets/45bfb442-fb9b-42df-8bfe-2a296965da09)
+
+2. **Design Steps**
+a. **Circuit design**: implement the function and model nmos and pmos to meet the library requirement, will get the information about W/L of the nmos and pmos in this step. Once we know the value of W/L for the transistors, next step is to implement these values in the layout called as layout design. Output of the Circuit design step is CDL (circuit description language)
+
+![image](https://github.com/user-attachments/assets/f7007bfc-6dea-4fbd-8752-1bc596e79563)
+
+b. **Layout design**: First step is to get the function implemented through the mos transistors. The next step is to get the pmos network graph and nmos network graph. Output of the layout design - GDSII, LEF, extracted spice netlist/ckt
+
+![image](https://github.com/user-attachments/assets/a0c01820-7763-4e04-a98d-ae8b6cc18689)
+
 ### SKY_L3 - Layout design step 
+
+Next step is to obtain the Euler's path.
+
+![image](https://github.com/user-attachments/assets/52bcc0fc-2adf-4764-b872-83bdab8f8aca)
+
+Once you obtain a Euler's path, draw a stick diagram out of it.
+
+![image](https://github.com/user-attachments/assets/9f575b1c-255f-451a-a593-59b6b08419c2)
+
+Next step is to convert this stick diagram into a proper/typical layout according to the rules from the inputs.
+
+![image](https://github.com/user-attachments/assets/f45e50d2-e4c9-4836-bf67-651dc131c038)
+
+Next step is to extract the parasitics and characterize them in terms of timing.
+
+![image](https://github.com/user-attachments/assets/0715a97c-1dcc-4f42-8a83-3bd212bc36e4)
+
 ### SKY_L4 - Typical characterization flow
+
+c. **Characterization**
+
+![image](https://github.com/user-attachments/assets/3651383b-bf29-4cb6-b9a4-7b35f6a9c856)
+
+So, what we have till this step: layout of buffer, description of buffer, extracted spice netlist, subckts, nmos pmos spice models, etc.
+
+![image](https://github.com/user-attachments/assets/bf4e1e93-6627-49c6-8ca1-88c14b9d4927)
+
+![image](https://github.com/user-attachments/assets/a1fdd922-3223-4e95-8ebd-b92f0d5615d0)
+
+![image](https://github.com/user-attachments/assets/063f3288-d914-42e7-bbf5-a77a0c7f4aa7)
+
+![image](https://github.com/user-attachments/assets/c472f485-b0e1-4c69-8cc1-4f4f62b75f68)
+
+3. **Outputs**
+these are actually used by the EDA tools.
  
 ## SKY130_D2_SK4 - General timing characterization parameters  
 ### SKY_L1 - Timing threshold definitions
+
+1. **Timing Characterisation**
+
+![image](https://github.com/user-attachments/assets/042148f9-064b-458e-b439-b75408970577)
+
+a. **Timing Threshold definitions**
+
+![image](https://github.com/user-attachments/assets/f1e82acb-129e-4fa2-abff-f8475c819134)
+
+b. **Slew low rise threshold - 20%** and **Slew high rise threshold - 20%**
+
+![image](https://github.com/user-attachments/assets/afc89abe-9b2f-46dc-bbe1-2b3853bae394)
+
+![image](https://github.com/user-attachments/assets/83a7ccd1-352d-484e-b1d9-131691a135b2)
+
+c. **Slew low fall threshold - 20%** and **Slew high fall threshold - 20%**
+
+![image](https://github.com/user-attachments/assets/3deaeb2b-d366-4e0e-a554-800a47008442)
+
+![image](https://github.com/user-attachments/assets/f11ea15b-5d12-4801-8347-79a06b7deaf0)
+
+d. **in rise threshold - 50%:** and **out rise threshold - 50%:** 
+
+![image](https://github.com/user-attachments/assets/6ec481fb-4cac-4698-a1ab-bb140a9f3c86)
+
+![image](https://github.com/user-attachments/assets/af867bf6-c56d-4f81-8130-46290a5392af)
+
+e. **in fall threshold - 50%:** and **out fall threshold - 50%:** 
+
+![image](https://github.com/user-attachments/assets/c2ffdc88-f157-4854-b71a-37ac997ec820)
+
+![image](https://github.com/user-attachments/assets/0cc350f7-7df0-4a81-9ed8-3ab1ea0a3c68)
+
 ### SKY_L2 - Propagation delay and transition time
+
+f. **Propagation delay:**
+
+![image](https://github.com/user-attachments/assets/7e58eaa8-7a27-4741-82eb-636ad3cecfbf)
+
+g. **Transition time:**
+
+![image](https://github.com/user-attachments/assets/a5559602-9d2a-4092-b2a7-9a39bd7896f4)
+
+![image](https://github.com/user-attachments/assets/a8f376a4-859d-466c-b2bb-9984fd455232)
+
+![image](https://github.com/user-attachments/assets/fad295e6-5ebb-4e0e-b9f9-93788d288f1d)
+
+g. **Output current waveform and Output voltage waveform:**
 
 # SKY130 Day3 - Design library cell using Magic Layout and ngspice characterization
 ## SKY130_D3_SKY1 - Labs for CMOS inverter ngspice simulations
 ### SKY_L0 - IO placer revision
+
+
+
+
+
+
+
+
 ### SKY_L1 - SPICE deck creation for CMOS inverter
 ### SKY_L2 - SPICE simulation lab for CMOS inverter
 ### SKY_L3 - Switching Thershold Vm
@@ -447,11 +573,16 @@ Note: Power Distribution Network gets created during floorplan but in Openlane f
 ### SKY_L5 - Lab steps to git clone vsdstdcelldesign
 
 ## SKY130_D3_SKY2 - Inceptions of  Layout AA CMOS fabrication process
-### SKY_L1 - 
-### SKY_L2 - 
-### SKY_L3 - S
-### SKY_L4 - S
-### SKY_L5 - L
+### SKY_L1 - Create Active regions
+### SKY_L2 - Formation of N-well and P-well
+### SKY_L3 - Formation of gate terminal 
+### SKY_L4 - Lightly doped drain (LDD) formation
+### SKY_L5 - Source AA drain formation
+### SKY_L6 - Local interconnect formation
+### SKY_L7 - Higher level metal formation
+### SKY_L8 - Lab introduction to Sky130 basic layers layout and LEF using inverter
+### SKY_L9 - Lab steps to create std cell layout and extract spice netlist 
+
 
 ## SKY130_D3_SKY3 - Sky130 Tech File Labs
 ### SKY_L1 - Sr
@@ -459,272 +590,59 @@ Note: Power Distribution Network gets created during floorplan but in Openlane f
 ### SKY_L3 - S
 ### SKY_L4 - Sta
 ### SKY_L5 - L
+### SKY_L5 - L
+### SKY_L5 - L
+### SKY_L5 - L
+### SKY_L5 - L
 
 # SKY130 Day4 - 
-## SKY130_D4_SKY1 - 
+## SKY130_D4_SK1 - 
 ### SKY_L1 - 
+### SKY_L1 - 
+### SKY_L1 - 
+### SKY_L1 - 
+### SKY_L1 - 
+### SKY_L1 - 
+### SKY_L1 - 
+### SKY_L1 - 
+### SKY_L1 - 
+
+## SKY130_D4_SK2 - 
+### SKY_L1 - 
+### SKY_L1 - 
+### SKY_L1 - 
+### SKY_L1 - 
+### SKY_L1 - 
+
+## SKY130_D4_SK3 - 
+### SKY_L1 - 
+### SKY_L1 - 
+### SKY_L1 - 
+### SKY_L1 - 
+
+## SKY130_D4_SK4 - 
+### SKY_L1 - 
+### SKY_L1 - 
+### SKY_L1 - 
+### SKY_L1 -
+### SKY_L1 -
 
 # SKY130 Day 5 - 
 ## SKY130_D5_SKY1 - 
 ### SKY_L1 -
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2. Library Binding & Placement
-
-a. Netlist binding & initial place design
-
-i. Library contains the information on the size & timing of the standard cells & IPs/macros
-
-ii. Same standard cells can have multiple sizes based on the drive strength of the cells
-
-iii. If we place the cells very close to the others (abutment), the cell delay is minimal, otherwise, we may have to use buffers if the distance between the two cells is big.
-
-b. Optimize placement using estimated wire length & capacitance
-
-i. So, if two cells are far away from each other, the wire resistance & capacitance is very high causing very high RC delay
-
-ii. Slew depends upon the capacitance value & high capacitance values will produce bad slew
-
-c. Final Optimization
-
-i. Abutment is preferred for critical paths since the delay between the cells is negligible and the circuit can work extremely fast.
-
-d. Need for libraries & characterization
-
-i. Library characterization & modeling: Logic synthesis -> Floorplanning -> Placement -> CTS -> Routing -> STA
-
-ii. One thing is common in all these stages – gates/cells
-
-iii. In each of the ASIC design flow needs to have the library information on the cells
-
-e. Congestion Aware placement using RePIAce
-
-i. After floorplan, next stage is placement stage
-
-ii. Two sub-stages for placement: 1. Global placement (coarse & no legalization) 2. Detailed placement (legalization happens in detailed placement)
-
-iii. Legalization: Cells should be exactly inside the rows, no overlap on other cells, should be abutted, important from timing point of view
-
-iv. The command run_placement is performed. Wire length reduction is the focus here.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### SKY_L1 -
+### SKY_L1 -
+
+## SKY130_D5_SK2 - 
+### SKY_L1 -
+### SKY_L1 -
+### SKY_L1 -
+
+## SKY130_D5_SK3 - 
+### SKY_L1 -
+### SKY_L1 -
+### SKY_L1 -
+### SKY_L1 -
 
 
 
