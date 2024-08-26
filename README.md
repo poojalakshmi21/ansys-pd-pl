@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/7c9d51b2-9a71-42e4-89a1-20e0228a680a)# Sky130 Day 1 - Inception of open-sorce EDA, OpenLANE and Sky130 PDK
+# Sky130 Day 1 - Inception of open-sorce EDA, OpenLANE and Sky130 PDK
 ## Sky130_D1_SK3  - Get familiar to open-sorce EDA tools
 ### SKY_L1 - OpenLANE Directory Structure in detail
 **Notes**
