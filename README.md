@@ -685,38 +685,78 @@ Ex: Rise delay = Time at Vout(50%) rise - time at Vin(50%) rise
 
 * So, we have done both static and dynamic simulation for the 1st case when Wn/Ln = Wp/Lp and got the Vm from the VTC where it cuts the 45 degree line.
 
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/2ec2975b-9876-4110-baf6-f7cbb79a80af)
 
 ### SKY_L5 - Lab steps to git clone vsdstdcelldesign
 
+
+
+
+
+
+
+
+
+
 ## SKY130_D3_SKY2 - Inceptions of  Layout AA CMOS fabrication process
 ### SKY_L1 - Create Active regions
+
+
 ### SKY_L2 - Formation of N-well and P-well
+
+
 ### SKY_L3 - Formation of gate terminal 
+
+
 ### SKY_L4 - Lightly doped drain (LDD) formation
+
+
 ### SKY_L5 - Source AA drain formation
+
+
 ### SKY_L6 - Local interconnect formation
+
+
 ### SKY_L7 - Higher level metal formation
+
+
 ### SKY_L8 - Lab introduction to Sky130 basic layers layout and LEF using inverter
+
+
 ### SKY_L9 - Lab steps to create std cell layout and extract spice netlist 
 
 
-## SKY130_D3_SKY3 - Sky130 Tech File Labs
-### SKY_L1 - Sr
-### SKY_L2 - SP
-### SKY_L3 - S
-### SKY_L4 - Sta
-### SKY_L5 - L
-### SKY_L5 - L
-### SKY_L5 - L
-### SKY_L5 - L
-### SKY_L5 - L
 
-# SKY130 Day4 - 
+## SKY130_D3_SKY3 - Sky130 Tech File Labs
+### SKY_L1 - Lab steps to create final SPICE deck using Sky130 tech
+
+
+### SKY_L2 - Lab steps to characterise inverter using sky130 model files
+
+
+### SKY_L3 - Lab introduction to Magic options and DRC rules
+
+
+### SKY_L4 - Lab exercise to implement pdks and steps to download labs
+
+
+### SKY_L5 - Lab introduction to Magic and steps to load Sky130 tech-rules
+
+
+### SKY_L6 - Lab exercise to fix poly.9 error in Sky130 tech-file
+
+
+### SKY_L7 - Lab exercise to implement poly resistor spacing to diff and tap
+
+
+### SKY_L8 - Lab challenge exercise to describe DRC error as geometrical construct
+
+
+### SKY_L9 - Lab challenge to find missing or incorrect rules and fix them
+
+
+
+# SKY130 Day4 - Pre-Layout timing analysis and importance of good clock tree
 ## SKY130_D4_SK1 - 
 ### SKY_L1 - 
 ### SKY_L1 - 
@@ -748,7 +788,7 @@ Ex: Rise delay = Time at Vout(50%) rise - time at Vin(50%) rise
 ### SKY_L1 -
 ### SKY_L1 -
 
-# SKY130 Day 5 - 
+# SKY130 Day 5 - Final steps for RTL2GDS using tritonRoute and openSTA
 ## SKY130_D5_SKY1 - 
 ### SKY_L1 -
 ### SKY_L1 -
