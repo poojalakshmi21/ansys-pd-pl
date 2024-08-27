@@ -583,36 +583,114 @@ Again opened the layout in Magic and the def is updated (in the same folder only
 
 SPICE simulations: 350nm, 250nm mos are available.
 
-1. Create a SPICE deck for VTC CMOS characteristics: netlist
+1. Create a SPICE deck for VTC CMOS characteristics: SPICE deck is nothing but a netlist, a connectivity information
 
 a. When we say W/L of mos it means it is the W/L of the channel of mos.
 
 b. In cmos, generally pmos should be wider than the nmos. Ideally, pmos should be twice or thrice of the nmos. But the spice deck we are creating is having nmos and pmos of the same W/L.
 
-![image](https://github.com/user-attachments/assets/76c3cea5-6c21-40e7-a2ec-0dd3725110f0)
+![image](https://github.com/user-attachments/assets/291ca74c-c8c1-4c85-824a-b8f17ecccdcd)
 
-M1 --> pmos, M2 --> nmos
+Here M1 = pmos, M2 = nmos
 
-Syntax of Mosfet in the SPICE: M1 Drain Gate Source Substrate type W L
+![image](https://github.com/user-attachments/assets/cddce7ee-23da-479a-a32a-c7a3de795526)
 
+Syntax of Mosfet in the SPICE: M1 Drain Gate Source Substrate type W L = M1 out in vdd vdd pmos 0.375u 0.25u
 
+### SKY_L2 - SPICE simulation lab for CMOS inverter
+
+![image](https://github.com/user-attachments/assets/f4b7a7a4-d473-4355-a7e5-4d96d74747c3)
+
+Syntax of Mosfet in the SPICE: M1 Drain Gate Source Substrate type W L = M2 out in 0 0 nmos 0.375u 0.25u
+
+Output load is connected between out and 0:
+
+![image](https://github.com/user-attachments/assets/3d5b8a62-f221-45f0-9b7c-09290b9a6d15)
+
+![image](https://github.com/user-attachments/assets/cf2147ca-dda9-4f86-b968-b28a2d49c31d)
+
+![image](https://github.com/user-attachments/assets/280fa3f8-4fdc-4e76-a7aa-dbfb53b62cdd)
+
+![image](https://github.com/user-attachments/assets/8a02688b-a0d5-4c50-bc66-acc778d17409)
 
 2. SPICE simulation in ngspice:
 
-Wn, Wp --> nomos and pmos channel width
+![image](https://github.com/user-attachments/assets/d213ad6b-fbfc-47b0-8071-f118ca847294)
+
+Wn, Wp --> nmos and pmos channel width
 
 Ln, Lp --> nmos and pmos channel length
 
 Wn/Ln = Wp/Lp = 1.5
 
+![image](https://github.com/user-attachments/assets/4241a5b8-88d2-404b-822a-0d900425ff8e)
 
+The above VTC is shifted towards the left from the centre. 
 
+3. Now, upon increasing the pmos width to 0.9375 (2.5 times of nmos channel width) = pmos is bigger than nmos here
 
+Wn/Ln = 1.5, Wp/Lp = 3.75
 
+![image](https://github.com/user-attachments/assets/ef99bd3d-4389-4201-ba1f-0e58927019fe)
 
-### SKY_L2 - SPICE simulation lab for CMOS inverter
+Now the VTC is at the centre.
+
 ### SKY_L3 - Switching Thershold Vm
+
+4. Analysis of the 2 VTCs obtained in previous 2 points (2 & 3).
+
+![image](https://github.com/user-attachments/assets/2b1258f1-4a4a-4084-ad74-5a735f52465b)
+
+Shape of both the waveforms are similar, that means CMOS is a robust device, when input is low, ouput is high and vice-versa and this is for kinds of CMOS. Therefore, Cmos logic is even and widely used for any of the logic gate designing. 
+
+What defines the robustness of the CMOS?
+
+a. Switching threshold, Vm: It is a point where Vin=Vout
+
+![image](https://github.com/user-attachments/assets/d7d1bb95-a58c-4e49-bf5a-520a45ebcc72)
+
+This brings us to many conclusion here:
+
+i. This area is very critical area for CMOS inverter bcoz input=output.
+
+![image](https://github.com/user-attachments/assets/0969252a-8847-4258-9874-0d97f9501d78)
+
+ii. Both pmos and nmos are in saturation region in this area means both are kind of turned on that implies very high chance of leakage current. Direct current flow from power to ground means short ckt current.
+
+![image](https://github.com/user-attachments/assets/37fd3d3e-4952-4982-a871-3fd8cc624b12)
+
+iii. Here, Vin = Vout, means Gate voltage = Drain voltage which means Vgs >> threshold voltage.
+
+![image](https://github.com/user-attachments/assets/4fe813a8-485b-4f5d-8dc1-3c724672f5ef)
+
 ### SKY_L4 - Static and dynamic simulation of CMOS inverter
+
+iv. Derivation of Vm: we are trying to proof robustness of switching threshold and trying to understand how does the switching threshold varies with varying pmos and nmos.
+
+![image](https://github.com/user-attachments/assets/c555eba6-17c5-4835-9a1c-71b41448fc5c)
+
+* We will also do transient analysis here and calculate the rise and fall delay. We will plot Vin and Vout with time on x-axis.
+
+Dynamic simulation SPICE netlist:
+
+![image](https://github.com/user-attachments/assets/36cfdaca-a2e9-4fb0-941b-45c84b5013f7)
+
+![image](https://github.com/user-attachments/assets/4e01dc4f-c958-4453-b092-c0e790851b18)
+
+![image](https://github.com/user-attachments/assets/334001aa-0325-4644-a744-eaf3be3440ee)
+
+Rise and fall delays are calculated using the above waveform. Basically, we see at what times input and output 50% rise/fall happening and then subtract the two.
+
+Ex: Rise delay = Time at Vout(50%) rise - time at Vin(50%) rise
+
+* So, we have done both static and dynamic simulation for the 1st case when Wn/Ln = Wp/Lp and got the Vm from the VTC where it cuts the 45 degree line.
+
+
+
+
+
+
+
 ### SKY_L5 - Lab steps to git clone vsdstdcelldesign
 
 ## SKY130_D3_SKY2 - Inceptions of  Layout AA CMOS fabrication process
