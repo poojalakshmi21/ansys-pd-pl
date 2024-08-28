@@ -910,18 +910,191 @@ Channeling is an effect when you do a lot of ion implantation, if the vector vel
 
 ![image](https://github.com/user-attachments/assets/3ffef2c2-3b09-4c58-8c12-8d6f6dd91135)
 
+![image](https://github.com/user-attachments/assets/04dd0158-de19-423e-b56d-e8fcc8cf3f2f)
 
+![image](https://github.com/user-attachments/assets/3010227c-5f81-4115-9405-bb7c4a828190)
+
+![image](https://github.com/user-attachments/assets/3620069e-db5f-47ef-9344-29007c371f3a)
+
+Put this half built pmos and nmos to high temperature furnace.
+
+![image](https://github.com/user-attachments/assets/4a2ddab5-8ac1-41ba-9647-cce7c3743c58)
 
 ### SKY_L6 - Local interconnect formation
 
+**7. Steps to form contacts and interconnects (local)**
+
+Contacts are really very imp because thats the only thing that is accessible to an user through which you can control the electrical characteristics of pmos and nmos.
+
+![image](https://github.com/user-attachments/assets/66c602b7-52d0-44e7-a2b3-4babd30dbb63)
+
+![image](https://github.com/user-attachments/assets/2e2eee0f-f91e-4556-bc77-0ed397c2ff92)
+
+![image](https://github.com/user-attachments/assets/44252201-e9c0-4786-98ab-d970dd52d929)
+
+![image](https://github.com/user-attachments/assets/d4e73c24-724b-4ad1-9628-28acdba2ebdb)
+
+![image](https://github.com/user-attachments/assets/f5926707-3774-4183-bdaf-9578dc175158)
+
+![image](https://github.com/user-attachments/assets/e1ee7c2d-11fd-4e75-96df-361af20f643e)
+
+![image](https://github.com/user-attachments/assets/311f00d2-95b7-4f46-9581-748d1f158c56)
+
+![image](https://github.com/user-attachments/assets/9ea6368d-b1fb-43ff-ab8f-b6658e66476b)
+
+![image](https://github.com/user-attachments/assets/6916e49d-bc88-499f-bc38-e0dc33a536df)
+
+![image](https://github.com/user-attachments/assets/77c99b38-0e7a-4559-9475-2cd3a7b7766b)
+
+![image](https://github.com/user-attachments/assets/6258d6bc-0d66-4836-b4d5-217b694a6a1a)
+
+![image](https://github.com/user-attachments/assets/6cbedef4-ebc7-4b8e-baee-68f48799cdfd)
+
+![image](https://github.com/user-attachments/assets/be0064bd-7d75-46fd-8689-3d7508d213a3)
 
 ### SKY_L7 - Higher level metal formation
 
+**8. Higher level metal formation**
+
+One thing to notice here is that we have non planar surface topography and its not a good idea to deposit the metal interconnects on this layer. There are some problems wrt metal discontinuity.
+
+So, we need to planerious this surface.
+
+![image](https://github.com/user-attachments/assets/612eba71-bec9-4fcf-a1d1-23486859a0c1)
+
+![image](https://github.com/user-attachments/assets/856793c0-04c9-4f56-8870-508c024dfcb2)
+
+![image](https://github.com/user-attachments/assets/e589ab7c-684b-4686-9302-4aed724b7f5e)
+
+![image](https://github.com/user-attachments/assets/77e1075d-863d-48ad-9507-f7d91316c27b)
+
+![image](https://github.com/user-attachments/assets/c7773fc1-8795-4b0f-a0e5-7ac6e06ae756)
+
+![image](https://github.com/user-attachments/assets/722c6130-1b7f-4c81-852d-54bbc4525c88)
+
+![image](https://github.com/user-attachments/assets/747d87e5-05b9-4615-ba15-22b3991cbd88)
+
+![image](https://github.com/user-attachments/assets/8a463d06-b07f-45af-a9c6-dd7562db843d)
+
+![image](https://github.com/user-attachments/assets/9e6be412-1743-479e-a5c3-399916e74060)
+
+![image](https://github.com/user-attachments/assets/2de5e0f0-603d-42a3-866c-ff914c8ce206)
+
+![image](https://github.com/user-attachments/assets/69c5edbe-8c78-4417-a772-b7e8e8f27c68)
+
+![image](https://github.com/user-attachments/assets/c73cc91d-133c-4422-a6da-e7408f940b5c)
+
+Till here, we have the local interconnects (0 level of metal), 1st level of interconnects (Aluminium interconnects). Now the next step is to again take this metal levels to the higher level metal.
+
+![image](https://github.com/user-attachments/assets/1e3d6009-06e8-49ad-9a90-3130ecfb1f4e)
+
+![image](https://github.com/user-attachments/assets/7fa5c347-97bb-4b0a-9352-f3658f1584ae)
+
+![image](https://github.com/user-attachments/assets/9fe10431-d4a3-40dc-b6a6-c11e82e125f6)
+
+TiN acts an additional layer to SiO2 and acts as the barrier between lower and higher metal layers.
+
+![image](https://github.com/user-attachments/assets/a3f7e3b1-717c-4aef-b34d-67a076cc61f8)
+
+![image](https://github.com/user-attachments/assets/6fc3d406-db7c-4ff4-a9fe-c8d11bb94634)
+
+![image](https://github.com/user-attachments/assets/2a8f3c0e-8b30-4212-be44-1bc517a72c87)
+
+![image](https://github.com/user-attachments/assets/25e57f5f-133d-48e0-91b5-933496c67784)
+
+16 mask CMOS process will look like:
+
+![image](https://github.com/user-attachments/assets/28f61c4f-2a85-4dab-93f7-a9549f1e1003)
 
 ### SKY_L8 - Lab introduction to Sky130 basic layers layout and LEF using inverter
 
+**9. Lab introduction to Sky130 basic layers layout and LEF using inverter**
+    
+1. On the right side of the CMOS inverter layout, we have all color palets, these are basically the layers.
+
+
+
+Green is the ndifusion layer, for verifying you can go to the green color in the color palet and it will show ndiffusion written at the top right bar.
+
+When the poly crosses n-diffusion, its an NMOS. Similarly, when the poly crosses p-diffusion, its a PMOS.
+
+For verifying the NMOS, we selected the region and then wrote what in the tkcon, it came out to be NMOS.
+
+
+
+Similarly, we did for PMOS.
+
+
+
+Now we will verify that the drain of PMOS and NMOS are connected.
+
+For that, place your cursor at the output pin Y and press S twice, all the highlighed boundary in white in connected which shows that drains of both PMOS & NMOS are connected.
+
+
+
+Now, check the connection of source of PMOS:
+
+
+
+So, source of the PMOS is connected to VDD net.
+
+Similarly, verified that the source of NMOS is connected to ground.
+
+
+
+
+Lab steps to create std cell layout and extract spice netlist: https://github.com/nickson-jose/vsdstdcelldesign
+
+How do we know what is the logical function of this inverter?
+
+For that, we would first extract this SPICE and post that we will do simulations in ngspice.
+
+To extract it on spice:
+
+Open the tkcon window and see where we are and extract it in a file using the command extract all.
+
+
+
+Now, we will use this ext file to create spice file to be used with the ngspice tool using command ext2spice.
+
+
+
+Extracted spice netlist:
+
+
+
+
 
 ### SKY_L9 - Lab steps to create std cell layout and extract spice netlist 
+
+1.Netlist:
+
+Doubel tick ones are defined in the netlist. We need to add some more lines to SPICE code for the below circuit.
+
+
+
+2. Edited SPICE netlist:
+
+
+
+We will run it in ngspice and will check the result.
+
+
+
+
+Plotted the Y vs time A
+
+
+
+
+We can see the spikes, load is very less, will modify the netlist.
+
+Edited netlist:
+
+
+
+
+
 
 
 
