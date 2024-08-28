@@ -4,14 +4,297 @@
 	<ul>
     		<li><a href="#header-1">Sky130 Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK</a></li>
 		<ul>
-        		<li><a href="#header-1-1">Get familiar to open-sorce EDA tools</a></li>
- 		</ul>
+        		<li><a href="#header-1-1">Sky130_D1_SK3  - Get familiar to open-sorce EDA tools</a></li>
+ 		<ul>
+			<li><a href="#header-1-1-1">SKY_L1 - OpenLANE Directory Structure in detail</a></li>
+		</ul>
 		<ul>
-			<li><a href="#header-1-2">OpenLANE Directory Structure in detail</a></li>
+			<li><a href="#header-1-1-2">SKY_L2 - Design Preparation Step</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-1-1-3">SKY_L3 - Review files after design prep and run synthesis</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-1-1-4">SKY_L4 - OpenLANE Project Git Link Description</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-1-1-5">SKY_L5 - Steps to characterize synthesis results</a></li>
+		</ul>
 		</ul>
  </div>
+
+
+
+<div class="toc">
+	<ul>
+    		<li><a href="#header-2">Sky130 Day 2 - Good Floorplan vs Bad Floorplan and Introduction to library cells</a></li>
+		<ul>
+        		<li><a href="#header-2-1">SKY130_D2_SK1 - Chip Floor planning considerations</a></li>
+ 		<ul>
+			<li><a href="#header-2-1-1">SKY_L1 - Utilization factor and aspect ratio</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-2-1-2">SKY_L2 - Concept of pre-placed cells</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-2-1-3">SKY_L3 - De-coupling capacitors</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-2-1-4">SKY_L4 - Power planning</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-2-1-5">SKY_L5 - Pin placement and logical cell placement blockage</a></li>
+		</ul>
+			<ul>
+			<li><a href="#header-2-1-6">SKY_L6 - Steps to run floorplan using OpenLANE</a></li>
+		</ul>
+			<ul>
+			<li><a href="#header-2-1-7">SKY_L7 - Review floorplan files and steps to view floorplan</a></li>
+		</ul>
+			<ul>
+			<li><a href="#header-2-1-8">SKY_L8 - Review floorplan layout in Magic</a></li>
+		</ul>  
+  </ul>
+
+<ul>
+        		<li><a href="#header-2-2">SKY130_D2_SK2 - Library Binding and Placement</a></li>
+ 		<ul>
+			<li><a href="#header-2-2-1">SKY_L1 - Netlist binding and initial place design</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-2-2-2">SKY_L2 - Optimize placement using estimated wire-length and capacitance</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-2-2-3">SKY_L3 - Final placement optimization</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-2-2-4">SKY_L4 - Need for libraries and characterization</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-2-2-5">SKY_L5 - Congestion aware placement using RePlAce</a></li>
+		</ul>	
+  	
+</ul>
+
+<ul>
+        		<li><a href="#header-2-3">SKY130_D2_SK3 - Cell design and characterization flows</a></li>
+ 		<ul>
+			<li><a href="#header-2-3-1">SKY_L1 - Inputs for cell design flow</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-2-3-2">SKY_L2 - Circuit design step</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-2-3-3">SKY_L3 - Layout design step</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-2-3-4">SKY_L4 - Typical characterization flow</a></li>
+		</ul>			
+</ul>
+
+<ul>
+        		<li><a href="#header-2-4">SKY130_D2_SK4 - General timing characterization parameters</a></li>
+ 		<ul>
+			<li><a href="#header-2-4-1">SKY_L1 - Timing threshold definitions</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-2-4-2">SKY_L2 - Propagation delay and transition time</a></li>
+		</ul>
+  </ul>
+ </div> 
  
 
+
+
+
+
+<div class="toc">
+	<ul>
+    		<li><a href="#header-3">Sky130 Day 3 - Design library cell using Magic Layout and ngspice characterization</a></li>
+		<ul>
+        		<li><a href="#header-3-1">SKY130_D3_SK1 - Labs for CMOS inverter ngspice simulations</a></li>
+ 		<ul>
+			<li><a href="#header-3-1-1">SKY_L0 - IO placer revision</a></li>
+		</ul>
+			<ul>
+			<li><a href="#header-3-1-2">SKY_L1 - SPICE deck creation for CMOS inverter</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-3-1-3">SKY_L2 - SPICE simulation lab for CMOS inverter</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-3-1-4">SKY_L3 - Switching Threshold Vm</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-3-1-5">SKY_L4 - Static and dynamic simulation of CMOS inverter</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-3-1-6">SKY_L5 - Lab steps to git clone vsdstdcelldesign</a></li>
+		</ul>
+  </ul>
+
+<ul>
+        		<li><a href="#header-3-2">SKY130_D3_SK2 - Inception of Layout ÃÂ CMOS fabrication process</a></li>
+ 		<ul>
+			<li><a href="#header-3-2-1">SKY_L1 - Create Active regions</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-3-2-2">SKY_L2 - Formation of N-well and P-well</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-3-2-3">SKY_L3 - Formation of gate terminal</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-3-2-4">SKY_L4 - Lightly doped drain (LDD) formation</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-3-2-5">SKY_L5 - Source and drain formation</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-3-2-6">SKY_L6 - Local interconnect formation</a></li>
+		</ul>
+	         <ul>
+			<li><a href="#header-3-2-7">SKY_L7 - Higher level metal formation</a></li>
+		</ul>
+  	         <ul>
+			<li><a href="#header-3-2-8">SKY_L8 - Lab introduction to Sky130 basic layers layout and LEF using inverter</a></li>
+		</ul>
+	         <ul>
+			<li><a href="#header-3-2-9">SKY_L9 - Lab steps to create std cell layout and extract spice netlist</a></li>
+		</ul>
+</ul>
+
+
+<ul>
+        		<li><a href="#header-3-3">SKY130_D3_SK3 - Sky130 Tech File Labs</a></li>
+ 		<ul>
+			<li><a href="#header-3-3-1">SKY_L1 - Lab steps to create final SPICE deck using Sky130 tech</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-3-3-2">SKY_L2 - Lab steps to characterize inverter using sky130 model files</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-3-3-3">SKY_L3 - Lab introduction to Magic tool options and DRC rules</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-3-3-4">SKY_L4 - Lab introduction to Sky130 pdk's and steps to download labs</a></li>
+		</ul>
+  <ul>
+			<li><a href="#header-3-3-5">SKY_L5 - Lab introduction to Magic and steps to load Sky130 tech-rules</a></li>
+		</ul>
+  <ul>
+			<li><a href="#header-3-3-6">SKY_L6 - Lab exercise to fix poly.9 error in Sky130 tech-file</a></li>
+		</ul>
+  <ul>
+			<li><a href="#header-3-3-7">SKY_L7 - Lab exercise to implement poly resistor spacing to diff and tap</a></li>
+		</ul>
+			 <ul>
+			<li><a href="#header-3-3-8">SKY_L8 - Lab challenge exercise to describe DRC error as geometrical construct</a></li>
+		</ul>
+	 <ul>
+			<li><a href="#header-3-3-9">SKY_L9 - Lab challenge to find missing or incorrect rules and fix them</a></li>
+		</ul>
+</ul>				
+ </div> 
+
+
+
+
+
+<div class="toc">
+	<ul>
+    		<li><a href="#header-4">Sky130 Day 4 - Pre-layout timing analysis and importance of good clock tree</a></li>
+		<ul>
+        		<li><a href="#header-4-1">SKY130_D4_SK1 - Timing modelling using delay tables</a></li>
+ 		<ul>
+			<li><a href="#header-4-1-1">SKY_L1 - Lab steps to convert grid info to track info</a></li>
+		</ul>
+			<ul>
+			<li><a href="#header-4-1-2">SKY_L2 - Lab steps to convert magic layout to std cell LEF</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-4-1-3">SKY_L3 - Introduction to timing libs and steps to include new cell in synthesis</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-4-1-4">SKY_L4 - Introduction to delay tables</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-4-1-5">SKY_L5 - Delay table usage Part 1</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-4-1-6">SKY_L6 - Delay table usage Part 2</a></li>
+		</ul>
+			<ul>
+			<li><a href="#header-4-1-7">SKY_L7 - Lab steps to configure synthesis settings to fix slack and include vsdinv</a></li>
+		</ul>
+  </ul>
+
+<ul>
+        		<li><a href="#header-4-2">SKY130_D4_SK2 - Timing analysis with ideal clocks using openSTA</a></li>
+ 		<ul>
+			<li><a href="#header-4-2-1">SKY_L1 - Setup timing analysis and introduction to flip-flop setup time</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-4-2-2">SKY_L2 - Introduction to clock jitter and uncertainty</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-4-2-3">SKY_L3 - Lab steps to configure OpenSTA for post-synth timing analysis</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-4-2-4">SKY_L4 - Lab steps to optimize synthesis to reduce setup violations</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-4-2-5">SKY_L5 - Lab steps to do basic timing ECO</a></li>
+		</ul>
+</ul>
+
+
+<ul>
+        		<li><a href="#header-4-3">SKY130_D4_SK3 - Clock tree synthesis TritonCTS and signal integrity</a></li>
+ 		<ul>
+			<li><a href="#header-4-3-1">SKY_L1 - Clock tree routing and buffering using H-Tree algorithm</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-4-3-2">SKY_L2 - Crosstalk and clock net shielding</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-4-3-3">SKY_L3 - Lab steps to run CTS using TritonCTS</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-4-3-4">SKY_L4 - Lab steps to verify CTS runs</a></li>
+		</ul>
+</ul>	
+
+<ul>
+        		<li><a href="#header-4-4">SKY130_D4_SK4 - Timing analysis with real clocks using openSTA</a></li>
+ 		<ul>
+			<li><a href="#header-4-4-1">SKY_L1 - Setup timing analysis using real clocks</a></li>
+		</ul>
+		<ul>
+			<li><a href="#header-4-4-2">SKY_L2 - Hold timing analysis using real clocks</a></li>
+		</ul>
+	<ul>
+			<li><a href="#header-4-4-3">SKY_L3 - Lab steps to analyze timing with real clocks using OpenSTA</a></li>
+		</ul>
+	<ul>
+			<li><a href="#header-4-4-4">SKY_L4 - Lab steps to execute OpenSTA with right timing libraries and CTS assignment</a></li>
+		</ul>
+	<ul>
+			<li><a href="#header-4-4-5">SKY_L5 - Lab steps to observe impact of bigger CTS buffers on setup and hold timing</a></li>
+		</ul>
+	</ul>	
+ </div> 
+
+
+
+
+
+
+
+
+
+
+ 
 
 
 
@@ -22,7 +305,7 @@
 
 # <h1 id="header-1">Sky130 Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK</h1>
 ## <h1 id="header-1-1">Sky130_D1_SK3  - Get familiar to open-sorce EDA tools</h1>
-## <h1 id="header-1-2">SKY_L1 - OpenLANE Directory Structure in detail</h1>
+## <h1 id="header-1-1-1">SKY_L1 - OpenLANE Directory Structure in detail</h1>
 
 **Notes**
 
@@ -43,7 +326,7 @@ libs.tech are those files specific to the tool
 
 Directory used to invoke the tool
 
-### SKY_L2 - Design Preparation Step
+## <h1 id="header-1-1-2">SKY_L2 - Design Preparation Step</h1>
 **Notes**
 
 ![image](https://github.com/user-attachments/assets/bfb277ff-e167-496b-93a9-20e27a434e1e)
@@ -70,7 +353,7 @@ Design preparation is completed.
 
 And the run folder is created under design folder. 
 
-### SKY_L3 - Review files after design prep and run synthesis
+## <h1 id="header-1-1-3">SKY_L3 - Review files after design prep and run synthesis</h1>
 **Notes**
 
 ![image](https://github.com/user-attachments/assets/e45675be-97da-4e37-812f-a8ddfd9d9484)
@@ -93,7 +376,7 @@ Apart from config.tcl which is avaialbale under Designs folder and Runs folder, 
 
 Use the run_synthesis command to run the Synthesis flow 
 
-### SKY_L4 - OpenLANE Project Git Link Description
+## <h1 id="header-1-1-4">SKY_L4 - OpenLANE Project Git Link Description</h1>
 **Notes**
 
 https://github.com/efabless/openlane
@@ -113,7 +396,7 @@ https://www.youtube.com/live/9Lw83kFtnc4?si=w8iuuy94h0yD7bzc
 
 https://www.youtube.com/live/EczW2IWdnOM?si=o09PSbgX_HbZi59s
 
-### SKY_L5 - Steps to characterize synthesis results
+## <h1 id="header-1-1-5">SKY_L5 - Steps to characterize synthesis results</h1>
 **Notes**
 
 Task 1: To find flop ratio, that is number of D-FlipFlops or total no. of cells
@@ -147,9 +430,9 @@ a. less 1-yosys_2.stat.rpt:
 b. less opensta_main.timing.rpt:
 ![image](https://github.com/user-attachments/assets/7fe9c7a9-fb0a-4782-903b-9792eeeff9d1)
 
-# Sky130 Day 2 - Good Floorplan vs Bad Floorplan and Introduction to library cells
-## Sky130_D2_SK1 - Chip Floor planning considerations
-### SKY_L1 - Utilization factor and aspect ratio
+# <h1 id="header-2">Sky130 Day 2 - Good Floorplan vs Bad Floorplan and Introduction to library cells</h1>
+## <h1 id="header-2-1">Sky130_D2_SK1 - Chip Floor planning considerations</h1>
+### <h1 id="header-2-1-1">SKY_L1 - Utilization factor and aspect ratio</h1>
 **Notes**
 
 1. Define width and height of Core and Die:
@@ -186,7 +469,7 @@ Some more examples:
 
 ![image](https://github.com/user-attachments/assets/85132317-efe0-488c-a157-3ca81fbe8e4e)
 
-### SKY_L2 - Concept of pre-placed cells
+### <h1 id="header-2-1-2">SKY_L2 - Concept of pre-placed cells</h1>
 **Notes**
 
 2. Define locations of Preplaced cells:
@@ -201,7 +484,7 @@ b. Preplaced cells are macros or IPs like memory, clock-gating cell, comparator,
 
 c. The arrangement of these IPs in a chip is referred as floorplanning. These IPs/blocks have user-defined locations, and hence are placed in the chip before automated placement-and-routing, and are called as preplaced cells. Automated placement and routing tools place the remaining logical cells in the design onto the chip. Place the preplaced cells on the basis of design scenario or design background.
 
-### SKY_L3 - De-coupling capacitors
+### <h1 id="header-2-1-3">SKY_L3 - De-coupling capacitors</h1>
 **Notes**
 
 3. Place the pre-placed cells closer to the input area and surround the preplaced cells with decoupling capacitors.
@@ -210,7 +493,7 @@ a. Decoupling capacitors are the huge capacitors that are completely filled with
 
 ![image](https://github.com/user-attachments/assets/aa3209ca-8313-4674-9042-2604e5ebe5f6)
 
-### SKY_L4 - Powerplanning
+### <h1 id="header-2-1-4">SKY_L4 - Powerplanning</h1>
 **Notes**
 
 4. Powerplanning
@@ -229,7 +512,7 @@ Mltiple power supply through mesh structure for VDD and VSS.
 
 ![image](https://github.com/user-attachments/assets/b36d615d-88f5-4663-9ebf-5ca0986eb9cb) 
 
-### SKY_L5 - Pin Placement and logical cell placement blockage.
+### <h1 id="header-2-1-5">SKY_L5 - Pin Placement and logical cell placement blockage.</h1>
 **Notes**
 
 5. Pin Placement and logical cell placement blockage.
@@ -248,7 +531,7 @@ Logical cell placement blockage
 
 We block the area between core and die to avoid placement of any logical cells in those areas by automated placement and routing tools because that area is reserve for the pin locations.
 
-### SKY_L6 - Steps to run floorplan using OpenLANE
+### <h1 id="header-2-1-6">SKY_L6 - Steps to run floorplan using OpenLANE</h1>
 
 Standard cell placement takes place during Placement stage and not during Floorplanning. 
 
@@ -278,7 +561,7 @@ Precendence for the .tcl files containing the default values are:
 
    ![image](https://github.com/user-attachments/assets/b83f88de-2542-40fa-bb92-6d33731cc10a)
 
-### SKY_L7 - Review floorplan files and steps to view floorplan
+### <h1 id="header-2-1-7">SKY_L7 - Review floorplan files and steps to view floorplan</h1>
 
 ![image](https://github.com/user-attachments/assets/c4e3b3cf-b271-4ac8-8716-c88c93f5d3a1)
 
@@ -292,7 +575,7 @@ Viewing the floorplan in magic:
 
 ![image](https://github.com/user-attachments/assets/e1575759-f690-4709-bbac-8eff7d17a305)
 
-### SKY_L8 - Review floorplan layout in Magic 
+### <h1 id="header-2-1-8">SKY_L8 - Review floorplan layout in Magic</h1>
 
 Viewing layout after the floorplan using magic tool:
 
@@ -310,8 +593,8 @@ Floorplan does place the standard cells. They are present in the lower left corn
 
 ![image](https://github.com/user-attachments/assets/504478bd-c95c-4d7a-98d9-cf7e0ba52a1b)
 
-## SKY130_D2_SK2 - Library Binding and Placement  
-### SKY_L1 - Netlist binding and initial place design 
+## <h1 id="header-2-2"> SKY130_D2_SK2 - Library Binding and Placement</h1>
+### <h1 id="header-2-2-1">SKY_L1 - Netlist binding and initial place design</h1>
 
 1. Bind netlist with physical cells:
 
@@ -330,7 +613,7 @@ After having proper shapes and sizes to each gate, these shapes and sizes are pl
 
 ![image](https://github.com/user-attachments/assets/b52f4d9b-2ae9-4149-8585-6713df6a1606)
 
-### SKY_L2 - Optimize placement using estimated wire-length and capacitance
+### <h1 id="header-2-2-2">SKY_L2 - Optimize placement using estimated wire-length and capacitance</h1>
 
 continuing placement of cells
 
@@ -354,7 +637,7 @@ Repeaters are added for the belwo instance:
 
 ![image](https://github.com/user-attachments/assets/942091ca-edcb-4dfc-a9b8-a66f06e7c2da)
 
-### SKY_L3 - Final placement optimization
+### <h1 id="header-2-2-3">SKY_L3 - Final placement optimization</h1>
 
 ![image](https://github.com/user-attachments/assets/06d7a0be-3694-4b57-8ae3-7e0fc4c1cba5)
 
@@ -364,7 +647,7 @@ The elements FF1, 1 ,2 and FF2 logics are abutted, that is, there is no time del
 
 ![image](https://github.com/user-attachments/assets/3aceb05d-286e-4676-ac5f-45e3760d421e)
 
-### SKY_L4 - Need for libraries and characterization
+### <h1 id="header-2-2-4">SKY_L4 - Need for libraries and characterization</h1>
 
 SetUp Timing Analysis
 
@@ -400,7 +683,7 @@ Below is an example of maze routing:
 
 Library characterization is very important and this collection of gates if you place it in some area, that area is referred to as Library.
 
-### SKY_L5 - Congestion aware and placement and RePlAce 
+ ### <h1 id="header-2-2-5">SKY_L5 - Congestion aware and placement and RePlAce <h1>
 
 After routing, it is placement stage.
 
@@ -443,8 +726,8 @@ In placement stage, the standard cells are fixed.
 
 Note: Power Distribution Network gets created during floorplan but in Openlane flow right now, the order is different. The floorplan does not create the Power Distribution Network. Here, in Openlane flow, PDN is done post floorplan, placement, and CTS.
 
-## SKY130_D2_SK3 - Cell design and characterization flows  
-### SKY_L1 - Inputs for cell design flow 
+## <h1 id="header-2-3">SKY130_D2_SK3 - Cell design and characterization flows </h1>
+### <h1 id="header-2-3-1">SKY_L1 - Inputs for cell design flow </h1>
 
 We have a placed and routed design here. Standard cells are placed in a section called Library. Library is a place where you keep all your standard cells, macros, IPs, decaps, etc.
 
@@ -473,7 +756,7 @@ b. **SPICE models**
 
 ![image](https://github.com/user-attachments/assets/8d83b632-b9ee-4914-a2ad-3f8fef2e30d7)
 
-### SKY_L2 - Circuit design step 
+### <h1 id="header-2-3-2">SKY_L2 - Circuit design step </h1>
 
 c. **Library & user-defined specs**: Cell-height, supply voltage, metal layers, pin location, drawn gate length, etc
 
@@ -490,7 +773,7 @@ b. **Layout design**: First step is to get the function implemented through the 
 
 ![image](https://github.com/user-attachments/assets/a0c01820-7763-4e04-a98d-ae8b6cc18689)
 
-### SKY_L3 - Layout design step 
+### <h1 id="header-2-3-3">SKY_L3 - Layout design step </h1>
 
 Next step is to obtain the Euler's path.
 
@@ -508,7 +791,7 @@ Next step is to extract the parasitics and characterize them in terms of timing.
 
 ![image](https://github.com/user-attachments/assets/0715a97c-1dcc-4f42-8a83-3bd212bc36e4)
 
-### SKY_L4 - Typical characterization flow
+### <h1 id="header-2-3-4"> SKY_L4 - Typical characterization flow </h1>
 
 c. **Characterization**
 
@@ -527,8 +810,8 @@ So, what we have till this step: layout of buffer, description of buffer, extrac
 3. **Outputs**
 these are actually used by the EDA tools.
  
-## SKY130_D2_SK4 - General timing characterization parameters  
-### SKY_L1 - Timing threshold definitions
+## <h1 id="header-2-4">SKY130_D2_SK4 - General timing characterization parameters  </h1>
+### <h1 id="header-2-4-1">SKY_L1 - Timing threshold definitions</h1>
 
 1. **Timing Characterisation**
 
@@ -562,7 +845,7 @@ e. **in fall threshold - 50%:** and **out fall threshold - 50%:**
 
 ![image](https://github.com/user-attachments/assets/0cc350f7-7df0-4a81-9ed8-3ab1ea0a3c68)
 
-### SKY_L2 - Propagation delay and transition time
+### <h1 id="header-2-4-2">SKY_L2 - Propagation delay and transition time</h1>
 
 f. **Propagation delay:**
 
@@ -578,9 +861,9 @@ g. **Transition time:**
 
 g. **Output current waveform and Output voltage waveform:**
 
-# SKY130 Day3 - Design library cell using Magic Layout and ngspice characterization
-## SKY130_D3_SKY1 - Labs for CMOS inverter ngspice simulations
-### SKY_L0 - IO placer revision
+# <h1 id="header-3"> SKY130 Day3 - Design library cell using Magic Layout and ngspice characterization</h1>
+## <h1 id="header-3-1">SKY130_D3_SKY1 - Labs for CMOS inverter ngspice simulations</h1>
+### <h1 id="header-3-1-1">SKY_L0 - IO placer revision</h1>
 
 In Openlane, we can do the changes on the fly. If suppose, we have already done the floorplan and observed a lot of congestion, we can change utilization factor even now. In our case, we have placed the IO pins equidistant, now we will be changing it to some other input output pin strategy.
 
@@ -602,7 +885,7 @@ Again opened the layout in Magic and the def is updated (in the same folder only
 
 ![image](https://github.com/user-attachments/assets/81abcbbb-bc9c-448d-8057-0c0804fd6065)
 
-### SKY_L1 - SPICE deck creation for CMOS inverter
+### <h1 id="header-3-1-2"> SKY_L1 - SPICE deck creation for CMOS inverter</h1>
 
 SPICE simulations: 350nm, 250nm mos are available.
 
@@ -620,7 +903,7 @@ Here M1 = pmos, M2 = nmos
 
 Syntax of Mosfet in the SPICE: M1 Drain Gate Source Substrate type W L = M1 out in vdd vdd pmos 0.375u 0.25u
 
-### SKY_L2 - SPICE simulation lab for CMOS inverter
+### <h1 id="header-3-1-3"> SKY_L2 - SPICE simulation lab for CMOS inverter</h1>
 
 ![image](https://github.com/user-attachments/assets/f4b7a7a4-d473-4355-a7e5-4d96d74747c3)
 
@@ -658,7 +941,7 @@ Wn/Ln = 1.5, Wp/Lp = 3.75
 
 Now the VTC is at the centre.
 
-### SKY_L3 - Switching Thershold Vm
+### <h1 id="header-3-1-4">SKY_L3 - Switching Thershold Vm</h1>
 
 4. Analysis of the 2 VTCs obtained in previous 2 points (2 & 3).
 
@@ -686,7 +969,7 @@ iii. Here, Vin = Vout, means Gate voltage = Drain voltage which means Vgs >> thr
 
 ![image](https://github.com/user-attachments/assets/4fe813a8-485b-4f5d-8dc1-3c724672f5ef)
 
-### SKY_L4 - Static and dynamic simulation of CMOS inverter
+### <h1 id="header-3-1-5"> SKY_L4 - Static and dynamic simulation of CMOS inverter</h1>
 
 iv. Derivation of Vm: we are trying to proof robustness of switching threshold and trying to understand how does the switching threshold varies with varying pmos and nmos.
 
@@ -710,7 +993,7 @@ Ex: Rise delay = Time at Vout(50%) rise - time at Vin(50%) rise
 
 ![image](https://github.com/user-attachments/assets/2ec2975b-9876-4110-baf6-f7cbb79a80af)
 
-### SKY_L5 - Lab steps to git clone vsdstdcelldesign
+### <h1 id="header-3-1-6"> SKY_L5 - Lab steps to git clone vsdstdcelldesign</h1>
 
 We will git clone one of the repositories that is custom made for this workshop.
 
@@ -738,8 +1021,8 @@ Opening the mag file and seeing the different layers that are used in the buildi
 
 ![image](https://github.com/user-attachments/assets/4a0d9d4a-c7dd-4e4b-a413-e39c084809c5)
 
-## SKY130_D3_SKY2 - Inceptions of  Layout AA CMOS fabrication process
-### SKY_L1 - Create Active regions
+## <h1 id="header-3-2">SKY130_D3_SKY2 - Inceptions of  Layout AA CMOS fabrication process</h1>
+### <h1 id="header-3-2-1">SKY_L1 - Create Active regions</h1>
 
 **16-mask CMOS process**
 
@@ -789,7 +1072,7 @@ j. remove or etch out the Si3N4.
 
 k. So, we have got the 2 active regions where we actually grow transistors and the isolation region will protect transistors so that they are not communicating with each other. So, we have actually created an electrical isolation over here.
 
-### SKY_L2 - Formation of N-well and P-well
+### <h1 id="header-3-2-2">SKY_L2 - Formation of N-well and P-well</h1>
 
 **3. N-well and P-well formation**
 
@@ -839,7 +1122,7 @@ In N-well, we are going to create pmos transistor and in P-well, we are going to
 
 ![image](https://github.com/user-attachments/assets/049bab7d-878a-4862-90df-19aadc60f95c)
 
-### SKY_L3 - Formation of gate terminal 
+### <h1 id="header-3-2-3"> SKY_L3 - Formation of gate terminal </h1>
 
 **4. Formation of 'gate'**
 
@@ -879,7 +1162,7 @@ Now the formation of gate step:
 
 ![image](https://github.com/user-attachments/assets/f2bce12c-0726-4d91-8947-1c296b8a007a)
 
-### SKY_L4 - Lightly doped drain (LDD) formation
+### <h1 id="header-3-2-4">SKY_L4 - Lightly doped drain (LDD) formation </h1>
 
 What we want to achieve over here is the doping profile that is **P+,P-,N in N-well where we are trying to fabricate the PMOS**.
 
@@ -917,7 +1200,7 @@ How to protect from further Source and Drain formation?
 
 ![image](https://github.com/user-attachments/assets/6f72aee0-8d6d-441f-937f-7385d495b59a)
 
-### SKY_L5 - Source and Drain formation
+### <h1 id="header-3-2-5">SKY_L5 - Source and Drain formation</h1>
 
 The next step is to add a thin layer of screen oxide to avoid the effect of channeling.
 
@@ -943,7 +1226,7 @@ Put this half built pmos and nmos to high temperature furnace.
 
 ![image](https://github.com/user-attachments/assets/4a2ddab5-8ac1-41ba-9647-cce7c3743c58)
 
-### SKY_L6 - Local interconnect formation
+### <h1 id="header-3-2-6">SKY_L6 - Local interconnect formation</h1>
 
 **7. Steps to form contacts and interconnects (local)**
 
@@ -975,7 +1258,7 @@ Contacts are really very imp because thats the only thing that is accessible to 
 
 ![image](https://github.com/user-attachments/assets/be0064bd-7d75-46fd-8689-3d7508d213a3)
 
-### SKY_L7 - Higher level metal formation
+### <h1 id="header-3-2-7">SKY_L7 - Higher level metal formation </h1>
 
 **8. Higher level metal formation**
 
@@ -1029,7 +1312,7 @@ TiN acts an additional layer to SiO2 and acts as the barrier between lower and h
 
 ![image](https://github.com/user-attachments/assets/28f61c4f-2a85-4dab-93f7-a9549f1e1003)
 
-### SKY_L8 - Lab introduction to Sky130 basic layers layout and LEF using inverter
+### <h1 id="header-3-2-8">SKY_L8 - Lab introduction to Sky130 basic layers layout and LEF using inverter</h1>
 
 **9. Lab introduction to Sky130 basic layers layout and LEF using inverter**
     
@@ -1088,7 +1371,7 @@ Extracted spice netlist:
 
 
 
-### SKY_L9 - Lab steps to create std cell layout and extract spice netlist 
+### <h1 id="header-3-2-9">SKY_L9 - Lab steps to create std cell layout and extract spice netlist </h1>
 
 1.Netlist:
 
@@ -1121,66 +1404,64 @@ Edited netlist:
 
 
 
-## SKY130_D3_SKY3 - Sky130 Tech File Labs
-### SKY_L1 - Lab steps to create final SPICE deck using Sky130 tech
+## <h1 id="header-3-3">SKY130_D3_SKY3 - Sky130 Tech File Labs</h1>
+### <h1 id="header-3-3-1">SKY_L1 - Lab steps to create final SPICE deck using Sky130 tech</h1>
 
 
-### SKY_L2 - Lab steps to characterise inverter using sky130 model files
+### <h1 id="header-3-3-2">SKY_L2 - Lab steps to characterise inverter using sky130 model files</h1>
 
 
-### SKY_L3 - Lab introduction to Magic options and DRC rules
+### <h1 id="header-3-3-3">SKY_L3 - Lab introduction to Magic options and DRC rules</h1>
 
 
-### SKY_L4 - Lab exercise to implement pdks and steps to download labs
+### <h1 id="header-3-3-4">SKY_L4 - Lab exercise to implement pdks and steps to download labs</h1>
 
 
-### SKY_L5 - Lab introduction to Magic and steps to load Sky130 tech-rules
+### <h1 id="header-3-3-5">SKY_L5 - Lab introduction to Magic and steps to load Sky130 tech-rules</h1>
 
 
-### SKY_L6 - Lab exercise to fix poly.9 error in Sky130 tech-file
+### <h1 id="header-3-3-6">SKY_L6 - Lab exercise to fix poly.9 error in Sky130 tech-file</h1>
 
 
-### SKY_L7 - Lab exercise to implement poly resistor spacing to diff and tap
+### <h1 id="header-3-3-7">SKY_L7 - Lab exercise to implement poly resistor spacing to diff and tap</h1>
 
 
-### SKY_L8 - Lab challenge exercise to describe DRC error as geometrical construct
+### <h1 id="header-3-3-8">SKY_L8 - Lab challenge exercise to describe DRC error as geometrical construct</h1>
 
 
-### SKY_L9 - Lab challenge to find missing or incorrect rules and fix them
+### <h1 id="header-3-3-9">SKY_L9 - Lab challenge to find missing or incorrect rules and fix them</h1>
 
 
 
-# SKY130 Day4 - Pre-Layout timing analysis and importance of good clock tree
-## SKY130_D4_SK1 - 
-### SKY_L1 - 
-### SKY_L1 - 
-### SKY_L1 - 
-### SKY_L1 - 
-### SKY_L1 - 
-### SKY_L1 - 
-### SKY_L1 - 
-### SKY_L1 - 
-### SKY_L1 - 
+# <h1 id="header-4">SKY130 Day4 - Pre-Layout timing analysis and importance of good clock tree</h1>
+## <h1 id="header-4-1">SKY130_D4_SK1 - </h1>
+### <h1 id="header-4-1-1">SKY_L1 - </h1>
+### <h1 id="header-4-1-2">SKY_L1 - </h1>
+### <h1 id="header-4-1-3">SKY_L1 - </h1>
+### <h1 id="header-4-1-4">SKY_L1 - </h1>
+### <h1 id="header-4-1-5">SKY_L1 - </h1>
+### <h1 id="header-4-1-6">SKY_L1 - </h1>
+### <h1 id="header-4-1-7">SKY_L1 - </h1>
 
-## SKY130_D4_SK2 - 
-### SKY_L1 - 
-### SKY_L1 - 
-### SKY_L1 - 
-### SKY_L1 - 
-### SKY_L1 - 
+## <h1 id="header-4-2">SKY130_D4_SK2 - </h1>
+### <h1 id="header-4-2-1">SKY_L1 - </h1>
+### <h1 id="header-4-2-2">SKY_L1 - </h1>
+### <h1 id="header-4-2-3">SKY_L1 - </h1>
+### <h1 id="header-4-2-4">SKY_L1 - </h1>
+### <h1 id="header-4-2-5">SKY_L1 - </h1>
 
-## SKY130_D4_SK3 - 
-### SKY_L1 - 
-### SKY_L1 - 
-### SKY_L1 - 
-### SKY_L1 - 
+## <h1 id="header-4-3">SKY130_D4_SK3 - </h1>
+### <h1 id="header-4-3-1">SKY_L1 - </h1>
+### <h1 id="header-4-3-2">SKY_L1 - </h1>
+### <h1 id="header-4-3-3">SKY_L1 - </h1>
+### <h1 id="header-4-3-4">SKY_L1 - </h1>
 
-## SKY130_D4_SK4 - 
-### SKY_L1 - 
-### SKY_L1 - 
-### SKY_L1 - 
-### SKY_L1 -
-### SKY_L1 -
+## <h1 id="header-4-4">SKY130_D4_SK4 - </h1>
+### <h1 id="header-4-4-1">SKY_L1 - </h1>
+### <h1 id="header-4-4-2">SKY_L1 - </h1>
+### <h1 id="header-4-4-3">SKY_L1 - </h1>
+### <h1 id="header-4-4-4">SKY_L1 - </h1>
+### <h1 id="header-4-4-5">SKY_L1 - </h1>
 
 # SKY130 Day 5 - Final steps for RTL2GDS using tritonRoute and openSTA
 ## SKY130_D5_SKY1 - 
