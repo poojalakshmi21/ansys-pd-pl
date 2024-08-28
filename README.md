@@ -689,27 +689,174 @@ Ex: Rise delay = Time at Vout(50%) rise - time at Vin(50%) rise
 
 ### SKY_L5 - Lab steps to git clone vsdstdcelldesign
 
+We will git clone one of the repositories that is custom made for this workshop.
 
+Git repository link: https://github.com/nickson-jose/vsdstdcelldesign
 
+How to git clone?
 
+Click on the green Code button and then copy the URL.
 
+![image](https://github.com/user-attachments/assets/d9297783-5b60-485a-96c4-f462bff073e4)
 
+Now use git clone command in the terminal and paste the link.
 
+A new folder vsdstdcelldesign is created.
 
+![image](https://github.com/user-attachments/assets/303b85b9-01ac-4d2d-8695-9341eba383be)
 
+Opening the mag file and seeing the different layers that are used in the building of the inverter. Copy the tech file to this vsdstdcell design dir itself as we will be frequently using it. The read line that we are seeing in the above inverter layout is the polysilicon.
+
+![image](https://github.com/user-attachments/assets/d9215dfa-b424-46c3-9c8d-5e6ee16a77b9)
+
+![image](https://github.com/user-attachments/assets/af3e3d2f-0c9c-48d4-9715-12704c5091f8)
+
+![image](https://github.com/user-attachments/assets/418437db-a323-4096-98a2-bba79f0b3374)
+
+![image](https://github.com/user-attachments/assets/4a0d9d4a-c7dd-4e4b-a413-e39c084809c5)
 
 ## SKY130_D3_SKY2 - Inceptions of  Layout AA CMOS fabrication process
 ### SKY_L1 - Create Active regions
 
+**16-mask CMOS process**
+
+**1. Selecting a substrate**
+Substrate is something on which you fabricate your complete design. There are various kind of substrate available but we will go for the most common one which we use for most of the mobile devices or any kind of device or chip you see in the real time = p-type
+
+![image](https://github.com/user-attachments/assets/2ba831b1-d4d3-4b0b-b3f8-830145e67f96)
+
+**2. Creating active region for transistors**
+a. Grow 40nm Silicon dioxide (SiO2) [act as an insulator] on the p-type substrate.
+
+b. Deposit a layer of 80nm Si3N4 over it.
+
+c. Deposit a layer of photoresist (1um) on top of it. Photoresist is a film, positive or negative film that see for old cameras. On this photoresist we are going to do some process.
+
+d. Mask1 --> When we talk about layouts those are nothing but mask in fabrication term. We basically protect some desired area through masking. In the below snippet that red color is masking. If there is UV light, then the area underneath those red masks are protected while the other resions are exposed to those UV light. So, we basically wash those resist area those are directly exposed to the UV light.
+
+![image](https://github.com/user-attachments/assets/269106a9-b026-487f-be95-47378f8d5ab8)
+
+e. After washing the exposed photoresist region:
+
+![image](https://github.com/user-attachments/assets/3d4b0798-407d-4dac-891f-819b75e2a6f0)
+
+f. Next step is to remove the mask: (These all are process of photolithography)
+
+![image](https://github.com/user-attachments/assets/f210afe9-cc00-4d4a-af05-8d2a9e2ffa38)
+
+g. Etched off the Si3N4, Only the area underneath the photoresist will be protected, the remaing Si3N4 area will be etched off.
+
+![image](https://github.com/user-attachments/assets/76c30e7d-4aab-4750-afab-43d1784c0ea0)
+
+h. Next step is to remove the photoresist itself because Si3N4 itself will act as a very good protection layer to grow the oxides on the other area.
+
+![image](https://github.com/user-attachments/assets/9ed787b4-835a-4391-8b7a-ffb6ae01b287)
+
+i. Now we will put this complete thing into an oxidation furnace. A furnace is a place which works at very high temperature upto 900-1000 degree celsius that helps to grow the oxide in the other areas. We have grown the first layer of SiO2 in oxidation furnace itself. Now there will be second level of growth of oxidation.
+
+![image](https://github.com/user-attachments/assets/81d7b19c-8d9d-4a3c-b670-23c76d335387)
+
+These areas of thick deposition of Si3N4 are called as isolation region and the **transistors at both the side won't be able to communicate to each other because of this isolation region**. This process that we have done is referred to as **LOCOS.**
+
+![image](https://github.com/user-attachments/assets/4bf74a38-4d4a-42d3-9f83-5ea50a996cc0)
+
+j. remove or etch out the Si3N4.
+
+![image](https://github.com/user-attachments/assets/0bc606ac-4f4e-490a-b238-1204293d7861)
+
+k. So, we have got the 2 active regions where we actually grow transistors and the isolation region will protect transistors so that they are not communicating with each other. So, we have actually created an electrical isolation over here.
 
 ### SKY_L2 - Formation of N-well and P-well
 
+**3. N-well and P-well formation**
+
+N-well is used for pmos fabrication and P-well is used for nmos fabrication. Both can't be done at the same time. We need to protect the one area while we fabricate the other.
+
+The same steps will be done here also, deposit a layer of photoresist then define pattren of layer you want to protect. So we are using Mask2 to protect one area first.
+
+![image](https://github.com/user-attachments/assets/d54ae276-566c-4ead-8185-5416c8e9377e)
+
+Mask2 view in the layout:  top view of CMOS inverter in Magic.
+
+![image](https://github.com/user-attachments/assets/64f8c16d-aaeb-47fd-ac9f-79e077cf4538)
+
+Next step is to expose this photoresist to the UV light. So, same this UV light will react only to the exposed photoresist area.
+
+![image](https://github.com/user-attachments/assets/a8e77e54-7ed6-44b7-b104-902d608c011e)
+
+When we wash this particular thing into a solution, that exposed area of photoresist will washed away.
+
+Now, the right area is available for any chemical reactions or anything we have to do over here.
+
+Next step is to remove the Mask2 also. And finally we have to create a p-well over here.
+
+P-well is created using Boron. Boron is a p-type material and it is diffused into this particular p-type substrate using a process called as Ion implantation. So, Boron being a p-type creates a P-well over here and the energy that is needed to diffuse the Boron through the oxide layer present is about 200keV.
+
+We will do the similar steps of the N-well creation also.
+
+![image](https://github.com/user-attachments/assets/203bc7d1-ede5-4916-9941-245efb7ba0dc)
+
+For N-well creation, we will use Phosphorous that is an n-type material and a bit heavier than Boron. Then again the Ion implantation of Phosphorous will be done to create the N-well.
+
+![image](https://github.com/user-attachments/assets/8ddf66d4-1a2f-44a7-88f6-2796455a518c)
+
+![image](https://github.com/user-attachments/assets/13eabd6e-95a2-4dec-a6b5-3fcc4c33da58)
+
+So, we have created the wells over here but the depths of the wells are not finalized yet. So, this was just the well creation.
+
+Next we have to diffuse the wells so that it occupies almost half of the substrate area. So that we have a clear room available for pmos and nmos fabrication.
+
+So, the next step is to take this thing, this complete substrate into a high temperature furnace. It is called as Drive in furnace.
+
+Push it to a very high temp for a very long time about 11 degree celcius for 4-5 hrs.
+
+So, this will diffuse the Boro and Phosphorous atoms into the p-type substrate forming the clear wells. This is called as Twin tub process.
+
+In N-well, we are going to create pmos transistor and in P-well, we are going to create nmos transistor.
+
+![image](https://github.com/user-attachments/assets/049bab7d-878a-4862-90df-19aadc60f95c)
 
 ### SKY_L3 - Formation of gate terminal 
+
+**4. Formation of 'gate'**
+
+![image](https://github.com/user-attachments/assets/cb0c4897-ef53-4ba7-a61a-45c84de682e1)
+
+![image](https://github.com/user-attachments/assets/04f31988-03af-4037-896e-0376d32721ed)
+
+We are going to control the oxide capacitance and the doping concentration through the further steps. So the next step for the formation of gate is to control the doping concentration. Same masking steps again, repetetive steps.
+
+Threshold Voltage controlling:
+
+![image](https://github.com/user-attachments/assets/bda99152-50e1-4103-9547-75b329b164e6)
+
+![image](https://github.com/user-attachments/assets/6a036bc7-b8e0-40b8-8f45-d7ab653653cb)
+
+![image](https://github.com/user-attachments/assets/842b2922-e77e-4695-8076-d4bec728fa4a)
+
+![image](https://github.com/user-attachments/assets/3d1ceb28-994d-4f07-b614-958ecb4696bb)
+
+Fixing of oxide: that got damaged while Ion implantations.
+
+![image](https://github.com/user-attachments/assets/889e3106-3ba7-4d8d-bd47-52ebef80fcad)
+
+![image](https://github.com/user-attachments/assets/28952c15-460c-44dd-ac0b-3449b908b600)
+
+Now the formation of gate step:
+
+![image](https://github.com/user-attachments/assets/683f752e-e099-49e5-9d8c-0f87a25813cb)
+
+![image](https://github.com/user-attachments/assets/dd1628cf-3ea7-444d-9355-90759755cd2b)
+
+![image](https://github.com/user-attachments/assets/b448b66e-af6f-4b85-85fe-b1a36eb678df)
+
 
 
 ### SKY_L4 - Lightly doped drain (LDD) formation
 
+What we want to achieve over here is the doping profile that is **P+,P-,N in N-well where we are trying to fabricate the PMOS**.
+
+Similarly, for the NMOS that is being fabricated in the P-well, we need **N+,N-,P** doping profile.
 
 ### SKY_L5 - Source AA drain formation
 
