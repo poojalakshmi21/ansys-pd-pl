@@ -1,4 +1,4 @@
-# Sky130 Day 1 - Inception of open-sorce EDA, OpenLANE and Sky130 PDK
+# Sky130 Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK
 ## Sky130_D1_SK3  - Get familiar to open-sorce EDA tools
 ### SKY_L1 - OpenLANE Directory Structure in detail
 **Notes**
@@ -850,7 +850,11 @@ Now the formation of gate step:
 
 ![image](https://github.com/user-attachments/assets/b448b66e-af6f-4b85-85fe-b1a36eb678df)
 
+![image](https://github.com/user-attachments/assets/a170d767-a310-4873-b777-6c3b64b78bd5)
 
+![image](https://github.com/user-attachments/assets/4f69e116-a329-479b-8077-4c4c4a5b9c2f)
+
+![image](https://github.com/user-attachments/assets/f2bce12c-0726-4d91-8947-1c296b8a007a)
 
 ### SKY_L4 - Lightly doped drain (LDD) formation
 
@@ -858,7 +862,54 @@ What we want to achieve over here is the doping profile that is **P+,P-,N in N-w
 
 Similarly, for the NMOS that is being fabricated in the P-well, we need **N+,N-,P** doping profile.
 
-### SKY_L5 - Source AA drain formation
+![image](https://github.com/user-attachments/assets/2aaa04ae-1178-453b-9b8c-793bcfc36d83)
+
+Why do we need these kind of doping profiles?
+
+1. Hot electron effect:
+
+   ![image](https://github.com/user-attachments/assets/9d7ea293-2858-40f8-9f93-bb5732f2a7e2)
+
+2. Short channel effect:
+
+   ![image](https://github.com/user-attachments/assets/c5bd2c56-7008-40c0-90fa-81310fec76b9)
+
+   ![image](https://github.com/user-attachments/assets/7b1f5b44-a7df-4b4d-89e9-3370d119fe91)
+ 
+![image](https://github.com/user-attachments/assets/dd14eccd-5b8a-4bc5-bbc0-404690e69a73)
+
+![image](https://github.com/user-attachments/assets/cd7ee9fa-1087-4c05-bc6a-0eefdb38ab04)
+
+![image](https://github.com/user-attachments/assets/43d79775-b6e7-4183-a33f-80ae91449e03)
+
+![image](https://github.com/user-attachments/assets/79983f3a-2b3e-4290-b112-778298a863eb)
+
+How to protect from further Source and Drain formation?
+
+![image](https://github.com/user-attachments/assets/e110a969-c3ef-4d92-ba9e-ae274dd72192)
+
+![image](https://github.com/user-attachments/assets/bc3c1805-6dc4-409b-8c52-3fb59f77717a)
+
+![image](https://github.com/user-attachments/assets/cb2e6618-1af8-42df-8480-d783f21cecab)
+
+![image](https://github.com/user-attachments/assets/6f72aee0-8d6d-441f-937f-7385d495b59a)
+
+### SKY_L5 - Source and Drain formation
+
+The next step is to add a thin layer of screen oxide to avoid the effect of channeling.
+
+Channeling is an effect when you do a lot of ion implantation, if the vector velocity of our ions match with that of the crystaline structure of the p-type substrate, the ions might go deep inside the p-type substrate without even hitting any of the silicon atoms.
+
+![image](https://github.com/user-attachments/assets/c69e929e-97ce-4487-a3ab-d7bfbcc80b18)
+
+![image](https://github.com/user-attachments/assets/b13ea438-4a43-4034-a52e-0f5056ce588c)
+
+![image](https://github.com/user-attachments/assets/2447aa7f-7752-4303-9bb2-0d37cea36aff)
+
+![image](https://github.com/user-attachments/assets/8687cf76-fc6d-440c-ab74-75ff36f50af1)
+
+![image](https://github.com/user-attachments/assets/3ffef2c2-3b09-4c58-8c12-8d6f6dd91135)
+
 
 
 ### SKY_L6 - Local interconnect formation
