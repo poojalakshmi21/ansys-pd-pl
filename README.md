@@ -1318,7 +1318,7 @@ TiN acts an additional layer to SiO2 and acts as the barrier between lower and h
     
 1. On the right side of the CMOS inverter layout, we have all color palets, these are basically the layers.
 
-
+.
 
 Green is the ndifusion layer, for verifying you can go to the green color in the color palet and it will show ndiffusion written at the top right bar.
 
