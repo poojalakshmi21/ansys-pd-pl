@@ -1448,6 +1448,12 @@ So, we have got all the four parameters above, the cell characterization is done
 
 Magic DRC documentation: http://opencircuitdesign.com/magic/
 
+![image](https://github.com/user-attachments/assets/ec424141-7c09-4bac-bd05-baf62106a98c)
+
+![image](https://github.com/user-attachments/assets/e3c8a8f3-4fee-4f1d-8213-e1c2492615a3)
+
+![image](https://github.com/user-attachments/assets/024f4ed2-176a-43a2-b24b-5aeb5898624d)
+
 ### <h1 id="header-3-3-4">SKY_L4 - Lab exercise to implement pdks and steps to download labs</h1>
 
 ![image](https://github.com/user-attachments/assets/d4be1157-64a3-4d37-81a9-8d5f6f854dc4)
