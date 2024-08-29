@@ -1460,37 +1460,146 @@ Magic DRC documentation: http://opencircuitdesign.com/magic/
 
 Skywater documentation: https://skywater-pdk.readthedocs.io/en/main/rules/background.html
 
+![image](https://github.com/user-attachments/assets/8aa87c36-d6d6-4669-a562-d8deea36bd6c)
+
 DRC rules: http://opencircuitdesign.com/magic/techref/maint2.html#drc
 
 ![image](https://github.com/user-attachments/assets/3deae950-9ebb-4fce-b205-d1e3e985bdd5)
 
+![image](https://github.com/user-attachments/assets/5ff00e8a-6df0-4ba6-895a-f35adfb9b421)
 
+![image](https://github.com/user-attachments/assets/6b9d471e-2c07-4a18-8d98-898c129762e4)
 
+![image](https://github.com/user-attachments/assets/741261a8-786b-47c3-8844-73723a971e0d)
 
+![image](https://github.com/user-attachments/assets/08dd08da-6c2d-459b-96b9-b7d67fff88bb)
 
-
-
+![image](https://github.com/user-attachments/assets/b1df4654-ad3b-4085-a2dc-288b4104fbd2)
 
 ### <h1 id="header-3-3-5">SKY_L5 - Lab introduction to Magic and steps to load Sky130 tech-rules</h1>
 
+![image](https://github.com/user-attachments/assets/d05c0ef6-1dd4-45c0-ae22-ef6a63d35395)
+
+![image](https://github.com/user-attachments/assets/93033786-2f39-44ed-a8c6-b4eab5cbcc29)
+
+![image](https://github.com/user-attachments/assets/636e4b60-7c33-4936-b2d1-23f03a0071bf)
+
+Rules mentioned in Skywater pdk:
+
+![image](https://github.com/user-attachments/assets/2dd23217-6763-4a38-ba13-cc527b88c425)
+
+Creating m3 contact: make a box with left click and right click like we select an object and then hover over m3 contact in color plate and press pk.
+
+type : to go to the tkcon shell and type cif see VIA2 to see the contact cuts.
+
+![image](https://github.com/user-attachments/assets/140df276-f03e-425d-8217-165195a0a918)
+
+![image](https://github.com/user-attachments/assets/084fb7a8-964c-4665-80cc-7bfa17b41cb1)
 
 ### <h1 id="header-3-3-6">SKY_L6 - Lab exercise to fix poly.9 error in Sky130 tech-file</h1>
 
+![image](https://github.com/user-attachments/assets/6f922ae1-ed8b-4b72-ab73-0ede75ab529e)
+
+![image](https://github.com/user-attachments/assets/c20f0906-e378-495e-aaa9-6fa74fc96bd4)
+
+![image](https://github.com/user-attachments/assets/9662eea9-c4c6-4a8a-bc9f-8f68bbdbd15b)
+
+![image](https://github.com/user-attachments/assets/f8027d89-deba-4492-a0a4-46c822e02de1)
+
+Before editing:
+
+![image](https://github.com/user-attachments/assets/9a761772-0a39-451e-a280-579d7e8d08e8)
+
+![image](https://github.com/user-attachments/assets/cbd692af-7450-4af7-bc73-29454b8d2780)
+
+After editing:
+
+![image](https://github.com/user-attachments/assets/e5525020-39ca-4eb7-8380-af9ea1b203bd)
+
+![image](https://github.com/user-attachments/assets/ef45e220-d1c8-4c2f-8942-dc2a7577c1f0)
 
 ### <h1 id="header-3-3-7">SKY_L7 - Lab exercise to implement poly resistor spacing to diff and tap</h1>
 
+![image](https://github.com/user-attachments/assets/ebc233f8-9c0f-488f-af7e-3c49ea603d07)
+
+![image](https://github.com/user-attachments/assets/646767bd-820e-4ece-be61-a0367f7a53f0)
 
 ### <h1 id="header-3-3-8">SKY_L8 - Lab challenge exercise to describe DRC error as geometrical construct</h1>
 
+![image](https://github.com/user-attachments/assets/c591861a-c872-4845-8d3c-f773a8d89dc6)
+
+![image](https://github.com/user-attachments/assets/3ae765d6-eb13-4b7d-b213-10474a2744de)
 
 ### <h1 id="header-3-3-9">SKY_L9 - Lab challenge to find missing or incorrect rules and fix them</h1>
 
+![image](https://github.com/user-attachments/assets/949471d0-eab9-498f-8ae6-5348c870b805)
 
+![image](https://github.com/user-attachments/assets/58154b36-64d4-4252-afa5-3336056ad7fa)
+
+![image](https://github.com/user-attachments/assets/9c1de72f-8600-4ab2-96f6-e5852386f112)
 
 # <h1 id="header-4">SKY130 Day4 - Pre-Layout timing analysis and importance of good clock tree</h1>
-## <h1 id="header-4-1">SKY130_D4_SK1 - </h1>
-### <h1 id="header-4-1-1">SKY_L1 - </h1>
-### <h1 id="header-4-1-2">SKY_L1 - </h1>
+## <h1 id="header-4-1">SKY130_D4_SK1 - Timing modelling using delay tables</h1>
+### <h1 id="header-4-1-1">SKY_L1 - Lab steps to convert grid info to track info</h1>
+
+![image](https://github.com/user-attachments/assets/72f2c064-d29f-4008-b4b5-6b612c84a80c)
+
+![image](https://github.com/user-attachments/assets/11899f15-374c-4446-8eb7-7fb5ad65045e)
+
+First step would be to extract a LEF file out of this sky130_inv.mag file.
+
+Open the tracks.info file: [Tracks are used in the routing stage]
+
+![image](https://github.com/user-attachments/assets/e8bec620-0086-4105-82c4-70900252a1f3)
+
+![image](https://github.com/user-attachments/assets/39c73414-a040-469e-b2d2-e41a1aff453f)
+
+Press G to activate the grid in Magic.
+
+![image](https://github.com/user-attachments/assets/b140dbd8-f478-47b8-a6e6-da070ffd6be0)
+
+Input and Output ports should be at the intersection of horizontal and vertical tracks. --> This is the 1st requirement.
+
+![image](https://github.com/user-attachments/assets/8e5d1f70-4f78-4334-af4f-fef6ae2d5359)
+
+Grid boxes have taken the dimension that we have provided:
+
+![image](https://github.com/user-attachments/assets/ec3de1a5-bab7-4a46-8245-148c2b769b15)
+
+We have converted the grid according to the track info.
+
+### <h1 id="header-4-1-2">SKY_L2 - Labs steps to convert magic layout to std cell LEF</h1>
+
+The 2nd requirement is that the width of the std cells should be in the odd multiples of the x direction pitch of that layer.
+
+We have verified that the layout of the inverter is as per the requirements of the PNR tool.
+
+Creation of port example:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### <h1 id="header-4-1-3">SKY_L1 - </h1>
 ### <h1 id="header-4-1-4">SKY_L1 - </h1>
 ### <h1 id="header-4-1-5">SKY_L1 - </h1>
