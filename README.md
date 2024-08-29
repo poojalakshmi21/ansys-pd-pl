@@ -1318,7 +1318,7 @@ TiN acts an additional layer to SiO2 and acts as the barrier between lower and h
     
 1. On the right side of the CMOS inverter layout, we have all color palets, these are basically the layers.
 
-.
+![image](https://github.com/user-attachments/assets/d71b8c82-0642-4472-a870-be2b52d83679)
 
 Green is the ndifusion layer, for verifying you can go to the green color in the color palet and it will show ndiffusion written at the top right bar.
 
@@ -1326,30 +1326,32 @@ When the poly crosses n-diffusion, its an NMOS. Similarly, when the poly crosses
 
 For verifying the NMOS, we selected the region and then wrote what in the tkcon, it came out to be NMOS.
 
-
+![image](https://github.com/user-attachments/assets/c6123b75-b59a-4163-b1ff-7a032976862e)
 
 Similarly, we did for PMOS.
 
-
+![image](https://github.com/user-attachments/assets/8374b21b-3528-401a-b8fe-264fe91aea4f)
 
 Now we will verify that the drain of PMOS and NMOS are connected.
 
 For that, place your cursor at the output pin Y and press S twice, all the highlighed boundary in white in connected which shows that drains of both PMOS & NMOS are connected.
 
-
+![image](https://github.com/user-attachments/assets/3bd160d9-21c2-453a-8132-29036c0f0cf1)
 
 Now, check the connection of source of PMOS:
 
-
+![image](https://github.com/user-attachments/assets/fc7765a7-78e7-4591-be16-915eea9d9948)
 
 So, source of the PMOS is connected to VDD net.
 
 Similarly, verified that the source of NMOS is connected to ground.
 
-
-
+![image](https://github.com/user-attachments/assets/f55a71d9-a7db-4b49-b0c0-d450dcfe9208)
 
 Lab steps to create std cell layout and extract spice netlist: https://github.com/nickson-jose/vsdstdcelldesign
+
+
+### <h1 id="header-3-2-9">SKY_L9 - Lab steps to create std cell layout and extract spice netlist </h1>
 
 How do we know what is the logical function of this inverter?
 
@@ -1359,62 +1361,108 @@ To extract it on spice:
 
 Open the tkcon window and see where we are and extract it in a file using the command extract all.
 
+![image](https://github.com/user-attachments/assets/e7f764f1-cfa7-446b-a85a-403fb4ddb893)
 
+![image](https://github.com/user-attachments/assets/0001ce17-e65d-4aaa-8855-6447b8614e82)
 
 Now, we will use this ext file to create spice file to be used with the ngspice tool using command ext2spice.
 
+![image](https://github.com/user-attachments/assets/e3083e3a-2601-4299-a9b8-d8cf83525463)
 
+![image](https://github.com/user-attachments/assets/27cc5b4b-0d35-42cd-ae73-c30eee56a865)
 
 Extracted spice netlist:
 
+![image](https://github.com/user-attachments/assets/e238194d-5a97-42fc-807f-dfc934593d05)
 
+![image](https://github.com/user-attachments/assets/a105a597-f0d0-4a80-bc0d-62829b09458e)
 
-
-
-### <h1 id="header-3-2-9">SKY_L9 - Lab steps to create std cell layout and extract spice netlist </h1>
+## <h1 id="header-3-3">SKY130_D3_SKY3 - Sky130 Tech File Labs</h1>
+### <h1 id="header-3-3-1">SKY_L1 - Lab steps to create final SPICE deck using Sky130 tech</h1>
 
 1.Netlist:
 
-Doubel tick ones are defined in the netlist. We need to add some more lines to SPICE code for the below circuit.
+Double tick ones are defined in the netlist. We need to add some more lines to SPICE code for the below circuit.
 
-
+![image](https://github.com/user-attachments/assets/064b848f-3616-4894-af9d-166b315f489f)
 
 2. Edited SPICE netlist:
 
-
+![image](https://github.com/user-attachments/assets/68fd99fb-92d1-4c25-821c-43f51b34c565)
 
 We will run it in ngspice and will check the result.
 
+![image](https://github.com/user-attachments/assets/18becc03-97d1-4a33-9c1a-52a3443012c8)
 
-
+![image](https://github.com/user-attachments/assets/71e1d837-e94e-484b-ae56-e0b22ba80e72)
 
 Plotted the Y vs time A
 
+![image](https://github.com/user-attachments/assets/5231c533-2c38-4fa1-8337-466fa444f577)
 
-
+![image](https://github.com/user-attachments/assets/6e01a6dd-9dd0-43a6-a266-b7f58a627ee2)
 
 We can see the spikes, load is very less, will modify the netlist.
 
 Edited netlist:
 
+![image](https://github.com/user-attachments/assets/a4d352db-6d82-404a-88ed-e08f74d14386)
 
+![image](https://github.com/user-attachments/assets/5231c533-2c38-4fa1-8337-466fa444f577)
 
-
-
-
-
-
-## <h1 id="header-3-3">SKY130_D3_SKY3 - Sky130 Tech File Labs</h1>
-### <h1 id="header-3-3-1">SKY_L1 - Lab steps to create final SPICE deck using Sky130 tech</h1>
-
+![image](https://github.com/user-attachments/assets/205d83db-c249-40fa-9060-bbdcec6b540c)
 
 ### <h1 id="header-3-3-2">SKY_L2 - Lab steps to characterise inverter using sky130 model files</h1>
 
+1. Rise Transition --> Time taken by the output to rise from 20 to 80% of the max value.
+
+20% of 3.3 = 0.66, 80% of 3.3 = 2.64
+
+![image](https://github.com/user-attachments/assets/080d12cf-364a-4bd4-a5af-8cb7e33f8ba8)
+
+Rise transition = 0.064 ns
+
+Similarly, Fall transition = 0.042 ns
+
+2. Cell Fall/Rise delay --> cell propagation delay when the output is falling/rising between 50% of the values.
+
+50% of 3.3 V = 1.65 V
+
+So we will fine the time diff between input and output when the value is 1.65 V.
+
+![image](https://github.com/user-attachments/assets/115d4973-c26c-4c09-9dae-b70e109aa685)
+
+rise delay = 0.061 ns
+
+Similarly, fall delay = 0.027 ns
+
+So, we have got all the four parameters above, the cell characterization is done.
 
 ### <h1 id="header-3-3-3">SKY_L3 - Lab introduction to Magic options and DRC rules</h1>
 
+![image](https://github.com/user-attachments/assets/fc054020-f092-4955-a8e2-57768a35b477)
+
+![image](https://github.com/user-attachments/assets/29ae29cf-9531-4559-adf4-dc9dbb45c373)
+
+![image](https://github.com/user-attachments/assets/74a50932-9864-4b91-be97-6beedcd25856)
+
+Magic DRC documentation: http://opencircuitdesign.com/magic/
 
 ### <h1 id="header-3-3-4">SKY_L4 - Lab exercise to implement pdks and steps to download labs</h1>
+
+![image](https://github.com/user-attachments/assets/d4be1157-64a3-4d37-81a9-8d5f6f854dc4)
+
+Skywater documentation: https://skywater-pdk.readthedocs.io/en/main/rules/background.html
+
+DRC rules: http://opencircuitdesign.com/magic/techref/maint2.html#drc
+
+![image](https://github.com/user-attachments/assets/3deae950-9ebb-4fce-b205-d1e3e985bdd5)
+
+
+
+
+
+
 
 
 ### <h1 id="header-3-3-5">SKY_L5 - Lab introduction to Magic and steps to load Sky130 tech-rules</h1>
