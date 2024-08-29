@@ -305,7 +305,7 @@
 
 # <h1 id="header-1">Sky130 Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK</h1>
 ## <h1 id="header-1-1">Sky130_D1_SK3  - Get familiar to open-sorce EDA tools</h1>
-## <h1 id="header-1-1-1">SKY_L1 - OpenLANE Directory Structure in detail</h1>
+### <h1 id="header-1-1-1">SKY_L1 - OpenLANE Directory Structure in detail</h1>
 
 **Notes**
 
@@ -326,7 +326,7 @@ libs.tech are those files specific to the tool
 
 Directory used to invoke the tool
 
-## <h1 id="header-1-1-2">SKY_L2 - Design Preparation Step</h1>
+### <h1 id="header-1-1-2">SKY_L2 - Design Preparation Step</h1>
 **Notes**
 
 ![image](https://github.com/user-attachments/assets/bfb277ff-e167-496b-93a9-20e27a434e1e)
@@ -353,7 +353,7 @@ Design preparation is completed.
 
 And the run folder is created under design folder. 
 
-## <h1 id="header-1-1-3">SKY_L3 - Review files after design prep and run synthesis</h1>
+### <h1 id="header-1-1-3">SKY_L3 - Review files after design prep and run synthesis</h1>
 **Notes**
 
 ![image](https://github.com/user-attachments/assets/e45675be-97da-4e37-812f-a8ddfd9d9484)
@@ -376,7 +376,7 @@ Apart from config.tcl which is avaialbale under Designs folder and Runs folder, 
 
 Use the run_synthesis command to run the Synthesis flow 
 
-## <h1 id="header-1-1-4">SKY_L4 - OpenLANE Project Git Link Description</h1>
+### <h1 id="header-1-1-4">SKY_L4 - OpenLANE Project Git Link Description</h1>
 **Notes**
 
 https://github.com/efabless/openlane
@@ -396,7 +396,7 @@ https://www.youtube.com/live/9Lw83kFtnc4?si=w8iuuy94h0yD7bzc
 
 https://www.youtube.com/live/EczW2IWdnOM?si=o09PSbgX_HbZi59s
 
-## <h1 id="header-1-1-5">SKY_L5 - Steps to characterize synthesis results</h1>
+### <h1 id="header-1-1-5">SKY_L5 - Steps to characterize synthesis results</h1>
 **Notes**
 
 Task 1: To find flop ratio, that is number of D-FlipFlops or total no. of cells
