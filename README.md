@@ -1570,12 +1570,124 @@ We have converted the grid according to the track info.
 
 ### <h1 id="header-4-1-2">SKY_L2 - Labs steps to convert magic layout to std cell LEF</h1>
 
-The 2nd requirement is that the width of the std cells should be in the odd multiples of the x direction pitch of that layer.
+The 2nd requirement is that the width of the std cells should be in the odd multiples of the x direction pitch of that layer. We have verified that the layout of the inverter is as per the requirements of the PNR tool.
 
-We have verified that the layout of the inverter is as per the requirements of the PNR tool.
+Defining all the ports (A, Y, PWR, GND): 
+
+![image](https://github.com/user-attachments/assets/7ba74e86-96e9-45bc-8a27-bf30a6c37212)
 
 Creation of port example:
 
+![image](https://github.com/user-attachments/assets/dcb1bdb4-0480-4eea-be44-fbe9bcfbf6ea)
+
+![image](https://github.com/user-attachments/assets/6b9a92b0-9cd7-460c-81c9-afe4fcfcb375)
+
+Now we are ready to extract the LEF file from this .mag.
+
+Saved used a custom name sky130_pooja.mag.
+
+![image](https://github.com/user-attachments/assets/b2a27533-3f58-48c0-8e1d-383e2d62cf93)
+
+Open the new custom .mag file and do lef write.
+
+![image](https://github.com/user-attachments/assets/5cffd01e-cabb-47fb-b4a7-5bf578c5ae5c)
+
+![image](https://github.com/user-attachments/assets/705eaf66-d691-490c-a969-465851c0bc76)
+
+![image](https://github.com/user-attachments/assets/a356c60a-6416-4c1e-8acc-62cd5fedfd0a)
+
+### <h1 id="header-4-1-3">SKY_L3 - Introduction to timing libs and steps to include new cell in synthesis</h1>
+
+Basic idea is to include the custom cell in the OpenLANE flow.
+
+Copy the custom lef files and the libs in this src dir:
+
+![image](https://github.com/user-attachments/assets/117535b8-3e55-4fea-a667-3df8ac782b3c)
+
+![image](https://github.com/user-attachments/assets/b4bd2634-8b42-4ed4-b217-a1ee688f40b7)
+
+![image](https://github.com/user-attachments/assets/88dc52c6-6712-4381-ae0d-037dbff53c5d)
+
+![image](https://github.com/user-attachments/assets/4557ee98-721f-4c72-8002-faa028157b4a)
+
+Now we need to modify our config.tcl.
+
+Original config.tcl:
+
+![image](https://github.com/user-attachments/assets/549f7a81-ea93-483f-8b1e-dcdfc5831c76)
+
+Modified Config.tcl:
+
+![image](https://github.com/user-attachments/assets/dc228629-f4d6-43bd-83f7-f1a33fca99e9)
+
+![image](https://github.com/user-attachments/assets/87044290-b23d-45de-a6d1-fde8c9c0af00)
+
+![image](https://github.com/user-attachments/assets/0ebb8dd0-3554-42fb-aa7f-297719ce146b)
+
+![image](https://github.com/user-attachments/assets/32d3d76f-a8f7-4fa3-9674-dfeb6833936e)
+
+Now we have to see if our run_synthesis maps our custom vsd inverter into this flow
+
+![image](https://github.com/user-attachments/assets/323faf39-f1c2-49b5-949c-0ee1f8119423)
+
+![image](https://github.com/user-attachments/assets/ce5a3a7e-78dd-493a-bab5-656288072721)
+
+### <h1 id="header-4-1-4">SKY_L4 - Introduction to delay tables</h1>
+
+![image](https://github.com/user-attachments/assets/615f8e80-3b6a-4ebc-86cb-358cb6fb8b8d)
+
+The advantage of using above circuits in the clock tree is that the rest of the circuit for the amount of time CLK is not getting propagated through the gates, there will be no switching and short ckt power that will be consumed by the clock tree during that period of time. So, lot of power is getting save during that time.
+
+Using these kind of AND and OR gates in clock tree is basically known as clock gating.
+
+Can we blindly swipe any buffer in the clock tree to such AND/OR gate as shown in the below snippet?
+
+![image](https://github.com/user-attachments/assets/063df711-a80b-4b8e-a15c-5c51c3d5d6c2)
+
+Why are we doing this particular observation as in the above snippet? Why do we even need this kind of observation?
+
+The Cload at the output of the buffers at each level will not be same for the whole clock tree. If load is varying, input transition will also vary for buffers at each level. So, we have varying input transition and varying output load for any buffer.
+
+So, problem here is that we will have the variety of delays. How to capture that?
+
+The solution is Delay tables. and the delay tables become the Timing model of a particular buffer of a particular size, vt (threshold voltage).
+
+![image](https://github.com/user-attachments/assets/f9297825-39ae-4a62-93e0-ca22d1fc469c)
+
+### <h1 id="header-4-1-5">SKY_L5 - Delay table usage Part -1</h1>
+
+CBUF'1' = Clock buffer of size 1.
+
+![image](https://github.com/user-attachments/assets/29f976de-cb30-4a17-ad5b-2528759b2043)
+
+Example with some real values:
+
+Those delay values whose values are not present in the table, those are extrapolated based on the given data in the table.
+
+![image](https://github.com/user-attachments/assets/d19bc9c5-a831-4810-91a0-24b5f4dd289c)
+
+Lets say the delay for CBUF'1' came out to be x9' [some value between x9 and x10 obtained after extrapolation].
+
+### <h1 id="header-4-1-6">SKY_L6 - Delay table usage Part -2</h1>
+
+![image](https://github.com/user-attachments/assets/ec0ae621-8767-4249-954b-3d79644445fe)
+
+Now, we need to calculate the latency from the input of buffer 1 to the point it is reaching the input of the flip-flops. Let us ignore the wire delay for now. For all the 4 paths to the flip flop, the delay/latency is x9'+y15. So the skew at any of the four inputs to flip flops is 0.
+
+![image](https://github.com/user-attachments/assets/870ce20e-8d84-40a4-bb44-faa70436eca5)
+
+If at every level, each node won't be driving the same load, then we would have got a non-zero skew value. That's why, it is always preferred that each node driving the same load at every level.
+
+Power aware CTS: For some time frame, some flops are not active, or are active only under certain conditions. So that section of the chip has got some special functionality that will turn on only under certain conditions. So, in that case we need to propagate the clock tree and stop it at 2 itself. That is how we can obtain a Power Aware Clock Tree.
+
+![image](https://github.com/user-attachments/assets/5473c41a-509e-455e-b61a-da536e1ec893)
+
+### <h1 id="header-4-1-7">SKY_L7 - Lab steps to configure synthesus to fix slack and include vsdinv</h1>
+
+
+
+
+We are changing some of the switches and rerunning synthesis to see if we can get some reduced slack.
 
 
 
@@ -1591,20 +1703,6 @@ Creation of port example:
 
 
 
-
-
-
-
-
-
-
-
-
-### <h1 id="header-4-1-3">SKY_L1 - </h1>
-### <h1 id="header-4-1-4">SKY_L1 - </h1>
-### <h1 id="header-4-1-5">SKY_L1 - </h1>
-### <h1 id="header-4-1-6">SKY_L1 - </h1>
-### <h1 id="header-4-1-7">SKY_L1 - </h1>
 
 ## <h1 id="header-4-2">SKY130_D4_SK2 - </h1>
 ### <h1 id="header-4-2-1">SKY_L1 - </h1>
